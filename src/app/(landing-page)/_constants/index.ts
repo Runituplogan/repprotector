@@ -19,7 +19,7 @@ export const reviewsColumnOne = [
     },
     {
         name: "Abby Harp",
-        avatar: "/57.jpeg",
+        avatar: "/57.png",
         rating: 5,
         text: "BlueHarbor helped redesign our landing page and the difference was noticeable almost immediately. Communication was clear, timelines were respected, and they explained things in a way that made sense even without a tech background. Solid experience overall."
     },
@@ -78,7 +78,7 @@ export const reviewsColumnTwo = [
     },
     {
         name: "Emma Davis",
-        avatar: "/91.png",
+        avatar: "/91.jpeg",
         rating: 5,
         text: "I worked with them while searching for a rental and the process was straightforward. Communication was consistent and they were honest about availability and pricing. Overall, a very professional experience."
     }

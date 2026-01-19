@@ -12,13 +12,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ReviewX",
-    default: "ReviewX",
+    template: "%s | Repprotector",
+    default: "Repprotector",
   },
   description:
-    "ReviewX helps your business earn trust, build credibility, and be found by the right people through powerful online reviews.",
+    "Repprotector helps your business earn trust, build credibility, and be found by the right people through powerful online reviews.",
   keywords: [
-    "ReviewX",
+    "Repprotector",
     "online reviews",
     "reputation management",
     "business reviews",
@@ -32,39 +32,39 @@ export const metadata: Metadata = {
     "social proof",
   ],
   twitter: {
-    title: "ReviewX – Be Found by the Right People",
+    title: "Repprotector – Be Found by the Right People",
     description:
-      "Your business deserves trust. ReviewX helps you grow your online reputation and attract the right customers.",
+      "Your business deserves trust. Repprotector helps you grow your online reputation and attract the right customers.",
     card: "summary_large_image",
-    site: "@ReviewX",
-    creator: "@ReviewX",
+    site: "@Repprotector",
+    creator: "@Repprotector",
     images: {
       url: "/favicon/android-chrome-192x192.png",
-      alt: "ReviewX",
+      alt: "Repprotector",
     },
   },
   openGraph: {
-    title: "ReviewX – Be Found by the Right People",
+    title: "Repprotector – Be Found by the Right People",
     description:
-      "ReviewX helps you earn trust and grow your online reputation so the right customers find your business.",
-    url: "https://reviewx.ai",
-    siteName: "ReviewX",
+      "Repprotector helps you earn trust and grow your online reputation so the right customers find your business.",
+    url: "https://repprotector.ai",
+    siteName: "Repprotector",
     images: [
       {
         url: "/favicon/android-chrome-192x192.png",
-        alt: "ReviewX",
+        alt: "Repprotector",
       },
     ],
     type: "website",
   },
   alternates: {
-    canonical: "https://reviewx.ai",
+    canonical: "https://repprotector.ai",
   },
   robots: {
     index: true,
     follow: true,
   },
-  metadataBase: new URL("https://reviewx.ai"),
+  metadataBase: new URL("https://repprotector.ai"),
 };
 
 const nunitoSans = Nunito_Sans({

@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     <!-- Header -->
     <div style="padding: 12px; text-align: center; border-bottom: 1px solid #E8E8E8;">
       <h1 style="font-family: 'Playfair Display', serif; font-weight: bold; font-size: 24px; color: #9046E5; margin: 0 0 16px;">
-        ReviewX
+       Repprotector
       </h1>
       <div style="background: #ECDBFF; width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; text-align: center;">
         <span style="font-size: 24px;">🎉</span>
@@ -117,14 +117,14 @@ export async function POST(req: Request) {
 
         Promise.all([
             transporter.sendMail({
-                from: `"ReviewX" <${process.env.EMAIL_USER}>`,
+                from: `"Repprotector" <${process.env.EMAIL_USER}>`,
                 to: session.customer_email!,
                 subject: "Payment Confirmation",
                 html: emailHtml,
             }).catch(console.error),
 
             transporter.sendMail({
-                from: `"ReviewX" <${process.env.EMAIL_USER}>`,
+                from: `"Repprotector" <${process.env.EMAIL_USER}>`,
                 to: process.env.ADMIN_EMAIL!,
                 subject: "New Paid Order",
                 html: emailHtml,

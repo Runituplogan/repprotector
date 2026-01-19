@@ -71,7 +71,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-black text-base text-center lg:text-start">
-            ReviewX helps you earn trust and grow your online reputation
+            Repprotector helps you earn trust and grow your online reputation
           </p>
 
           <Button

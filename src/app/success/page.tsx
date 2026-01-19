@@ -21,11 +21,11 @@ export default function SuccessPage() {
     useEffect(() => {
         if (!sessionId) {
             toast.error("No payment data found");
-            router.replace("/"); 
+            router.replace("/");
             return;
         }
 
-        if (sent) return; 
+        if (sent) return;
 
         const sendConfirmation = async () => {
             setLoading(true);
@@ -188,18 +188,18 @@ export default function SuccessPage() {
                     </div>
 
                     {/* Support Information */}
-                    <div className="pt-6 border-t border-grey-100">
+                    {/* <div className="pt-6 border-t border-grey-100">
                         <p className="text-center text-sm text-grey-400">
                             Need help?{" "}
                             <a
-                                href="mailto:support@reviewx.com"
+                                href="mailto:supportreviewx@.com"
                                 className="text-primary font-medium hover:underline"
                             >
                                 Contact our support team
                             </a>{" "}
                             or call us at (555) 123-4567
                         </p>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>

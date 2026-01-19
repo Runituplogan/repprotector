@@ -5,16 +5,16 @@ import Glow from "./glow";
 const faqsContent = [
     {
         id: 1,
-        question: "What does ReviewX actually do?",
+        question: "What does Repprotector actually do?",
         answer: `
       <p>
-       ReviewX helps businesses manage their online reputation by addressing invalid reviews, responding to customer feedback and improving visibility through consistent profile management across major platforms.
+       Repprotector helps businesses manage their online reputation by addressing invalid reviews, responding to customer feedback and improving visibility through consistent profile management across major platforms.
       </p>
     `,
     },
     {
         id: 2,
-        question: "Can ReviewX remove negative reviews from my profile?",
+        question: "Can Repprotector remove negative reviews from my profile?",
         answer: `
       <p>
       We do not remove reviews arbitrarily. We only challenge reviews that violate platform guidelines. If a review is valid, we focus on professional responses and reputation recovery instead.

@@ -2,11 +2,11 @@ export function Sersvice2() {
     return (
         <svg width="60" height="81" viewBox="0 0 60 81" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g filter="url(#filter0_d_492_502)">
-                <rect x="4" width="51.1855" height="72.4648" fill="url(#pattern0_492_502)" shape-rendering="crispEdges" />
+                <rect x="4" width="51.1855" height="72.4648" fill="url(#pattern0_492_502)" shapeRendering="crispEdges" />
             </g>
             <defs>
-                <filter id="filter0_d_492_502" x="0" y="0" width="59.1855" height="80.4648" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <filter id="filter0_d_492_502" x="0" y="0" width="59.1855" height="80.4648" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dy="4" />
                     <feGaussianBlur stdDeviation="2" />

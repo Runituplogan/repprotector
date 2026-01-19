@@ -1,7 +1,7 @@
 export function StarIcon({ filled }: { filled: boolean }) {
     return (
         <svg
-            className="w-4 h-4"
+            className="w-7 h-7"
             fill={filled ? "#FFD700" : "#E5E7EB"}
             viewBox="0 0 20 20"
         >

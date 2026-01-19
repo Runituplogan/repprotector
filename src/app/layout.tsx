@@ -12,13 +12,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Repprotector",
-    default: "Repprotector",
+    template: "%s | Rep Protector",
+    default: "Rep Protector",
   },
   description:
-    "Repprotector helps your business earn trust, build credibility, and be found by the right people through powerful online reviews.",
+    "Rep Protector helps your business earn trust, build credibility, and be found by the right people through powerful online reviews.",
   keywords: [
-    "Repprotector",
+    "Rep Protector",
     "online reviews",
     "reputation management",
     "business reviews",
@@ -32,39 +32,39 @@ export const metadata: Metadata = {
     "social proof",
   ],
   twitter: {
-    title: "Repprotector – Be Found by the Right People",
+    title: "Rep Protector – Be Found by the Right People",
     description:
-      "Your business deserves trust. Repprotector helps you grow your online reputation and attract the right customers.",
+      "Your business deserves trust. Rep Protector helps you grow your online reputation and attract the right customers.",
     card: "summary_large_image",
-    site: "@Repprotector",
-    creator: "@Repprotector",
+    site: "@Rep Protector",
+    creator: "@Rep Protector",
     images: {
       url: "/favicon/android-chrome-192x192.png",
-      alt: "Repprotector",
+      alt: "Rep Protector",
     },
   },
   openGraph: {
-    title: "Repprotector – Be Found by the Right People",
+    title: "Rep Protector – Be Found by the Right People",
     description:
-      "Repprotector helps you earn trust and grow your online reputation so the right customers find your business.",
-    url: "https://repprotector.ai",
-    siteName: "Repprotector",
+      "Rep Protector helps you earn trust and grow your online reputation so the right customers find your business.",
+    url: "https://www.repprotector.com/",
+    siteName: "Rep Protector",
     images: [
       {
         url: "/favicon/android-chrome-192x192.png",
-        alt: "Repprotector",
+        alt: "Rep Protector",
       },
     ],
     type: "website",
   },
   alternates: {
-    canonical: "https://repprotector.ai",
+    canonical: "https://www.repprotector.com/",
   },
   robots: {
     index: true,
     follow: true,
   },
-  metadataBase: new URL("https://repprotector.ai"),
+  metadataBase: new URL("https://www.repprotector.com/"),
 };
 
 const nunitoSans = Nunito_Sans({

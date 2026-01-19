@@ -27,4 +27,6 @@ export { TripAdvisorXs } from './trip-advisor-xs';
 export { HomeAdvisorXs } from './home-advisor-xs';
 export { Service1 } from './service-1';
 export { Sersvice2 } from './service-2';
-export { Service3 } from './service-3'
+export { Service3 } from './service-3';
+export {MessageIcon} from './message';
+export { WeRespond } from './we-respond'

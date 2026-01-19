@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { reviews } from "../_constants";
+import { reviews, reviewsColumnOne, reviewsColumnTwo } from "../_constants";
 import { Button } from "@/src/components/button";
 import Wrapper from "@/src/components/wrapper";
 import { useRouter } from "next/navigation";
@@ -71,7 +71,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-black text-base text-center lg:text-start">
-            Repprotector helps you earn trust and grow your online reputation
+            Rep Protector helps you earn trust and grow your online reputation
           </p>
 
           <Button
@@ -92,10 +92,10 @@ export default function Hero() {
           {/* Desktop */}
           <div className="hidden lg:flex gap-4 h-[600px] justify-center">
             <div className="w-[420px]">
-              <InfiniteScrollColumn reviews={columnOne} direction="up" />
+              <InfiniteScrollColumn reviews={reviewsColumnOne} direction="up" />
             </div>
             <div className="w-[420px]">
-              <InfiniteScrollColumn reviews={columnTwo} direction="down" />
+              <InfiniteScrollColumn reviews={reviewsColumnTwo} direction="down" />
             </div>
           </div>
 

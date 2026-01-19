@@ -6,7 +6,7 @@ export default function NavBar() {
 
         <nav className='py-[2.4rem] bg-white border-b-[.1rem] border-b-grey-100 fixed top-0 left-0 w-full z-40'>
             <Wrapper>
-                <h1 className='font-playfair font-bold text-xl text-primary'>Repprotector</h1>
+                <h1 className='font-playfair font-bold text-xl text-primary'>Rep Protector</h1>
             </Wrapper >
         </nav>
     )

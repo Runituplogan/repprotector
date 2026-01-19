@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { GlassDoorIcon, GoogleIcon, GoogleXs, HomeAdvisorIcon, OpenDoor, TripAdvisorIcon, TrustPilotIcon, YelpIcon } from "@/src/icons";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "@/src/utils/routes";
+import Cta from "./cta";
 
 const platforms = [
     {
@@ -88,6 +89,8 @@ export default function Platforms() {
                     <p className="text-black">Looking for reviews on a different platform?</p>
                     <p onClick={() => router.push(ROUTES.calendly)} className="text-primary cursor-pointer underline flex items-center font-semibold" >Click here to see if we can help <ArrowRight size={15} /> </p>
                 </div>
+
+                <Cta />
             </Wrapper>
         </section>
     )

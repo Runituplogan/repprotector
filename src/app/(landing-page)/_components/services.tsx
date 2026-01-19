@@ -25,13 +25,16 @@ const services = [
     }
 ]
 
-const howItWorks = [
-    {
-        icon: Service1,
-        title: "Select a Service and Make Payment",
-        description: "Choose the reputation management service that aligns with your brand goals. Select your desired coverage area, service level, and investment amount. Our flexible packages are designed to fit businesses of all sizes"
-    }
-]
+// const howItWorks = [
+//     {
+//         icon: Service1,
+//         title: "Select a Service and Make Payment",
+//         description: "Choose the reputation management service that aligns with your brand goals. Select your desired coverage area, service level, and investment amount. Our flexible packages are designed to fit businesses of all sizes"
+//     },
+//     {
+//         icon
+//     }
+// ]
 
 export default function Services() {
     const router = useRouter()
@@ -60,7 +63,7 @@ export default function Services() {
                 <div>
                     <header className="flex flex-col items-center max-w-[42.2rem]">
                         <h1 className="font-bold text-[5rem] font-playfair text-black">How It Works</h1>
-                        <p className="text-grey-600 text-center md:text-start">We've streamlined the process of building your online reputation into three simple, effective steps.</p>
+                        <p className="text-grey-600 text-center md:text-start">We&apos;ve streamlined the process of building your online reputation into three simple, effective steps.</p>
                     </header>
                     <div>
 

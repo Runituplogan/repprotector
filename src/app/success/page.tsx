@@ -82,7 +82,7 @@ export default function SuccessPage() {
                         </h1>
 
                         <p className="text-lg text-grey-400">
-                            Thank you for your purchase! We're processing your order.
+                            Thank you for your purchase! We&apos;re processing your order.
                         </p>
                     </div>
 
@@ -131,7 +131,7 @@ export default function SuccessPage() {
                                 <div>
                                     <p className="font-medium text-grey-600">Email Confirmation</p>
                                     <p className="text-grey-400 text-sm">
-                                        We've sent a receipt and order details to your email address.
+                                        We&apos;ve sent a receipt and order details to your email address.
                                     </p>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@ export default function SuccessPage() {
                                 <div>
                                     <p className="font-medium text-grey-600">Updates</p>
                                     <p className="text-grey-400 text-sm">
-                                        You'll receive progress updates via email as we work on your project.
+                                        You&apos;ll receive progress updates via email as we work on your project.
                                     </p>
                                 </div>
                             </div>

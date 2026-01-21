@@ -17,11 +17,18 @@ const transporter = nodemailer.createTransport({
 export async function POST(req: Request) {
   try {
     const { sessionId } = await req.json();
-    if (!sessionId) return NextResponse.json({ error: "Missing session ID" }, { status: 400 });
+    if (!sessionId)
+      return NextResponse.json(
+        { error: "Missing session ID" },
+        { status: 400 },
+      );
 
     const session = await stripe.checkout.sessions.retrieve(sessionId);
     if (!session || session.payment_status !== "paid") {
-      return NextResponse.json({ error: "Payment not verified" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Payment not verified" },
+        { status: 400 },
+      );
     }
 
     const metadata = session.metadata!;
@@ -71,41 +78,41 @@ export async function POST(req: Request) {
       <div style="margin-bottom: 24px;">
         <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
           ${(() => {
-        const info = [];
-        if (formData.fullName) {
-          info.push(`
+            const info = [];
+            if (formData.fullName) {
+              info.push(`
                 <div>
                   <div style="font-size: 14px; color: #666666; margin-bottom: 4px;">Name</div>
                   <div style="color: #000000; font-weight: 500;">${formData.fullName}</div>
                 </div>
               `);
-        }
-        if (formData.email) {
-          info.push(`
+            }
+            if (formData.email) {
+              info.push(`
                 <div>
                   <div style="font-size: 14px; color: #666666; margin-bottom: 4px;">Email</div>
                   <div style="color: #000000; font-weight: 500;">${formData.email}</div>
                 </div>
               `);
-        }
-        if (formData.platformUrl) {
-          info.push(`
+            }
+            if (formData.platformUrl) {
+              info.push(`
                 <div>
                   <div style="font-size: 14px; color: #666666; margin-bottom: 4px;">Platform</div>
                   <div style="color: #000000; font-weight: 500;">${formData.platformUrl}</div>
                 </div>
               `);
-        }
-        if (formData.quantity) {
-          info.push(`
+            }
+            if (formData.quantity) {
+              info.push(`
                 <div>
                   <div style="font-size: 14px; color: #666666; margin-bottom: 4px;">Quantity</div>
                   <div style="color: #000000; font-weight: 500;">${formData.quantity}</div>
                 </div>
               `);
-        }
-        return info.join('');
-      })()}
+            }
+            return info.join("");
+          })()}
         </div>
       </div>
 
@@ -116,19 +123,23 @@ export async function POST(req: Request) {
     `;
 
     Promise.all([
-      transporter.sendMail({
-        from: `"Rep Protector" <${process.env.EMAIL_USER}>`,
-        to: session.customer_email!,
-        subject: "Payment Confirmation",
-        html: emailHtml,
-      }).catch(console.error),
+      transporter
+        .sendMail({
+          from: `"Rep Protector" <${process.env.EMAIL_USER}>`,
+          to: session.customer_email!,
+          subject: "Payment Confirmation",
+          html: emailHtml,
+        })
+        .catch(console.error),
 
-      transporter.sendMail({
-        from: `"Rep Protector" <${process.env.EMAIL_USER}>`,
-        to: process.env.ADMIN_EMAIL!,
-        subject: "New Paid Order",
-        html: emailHtml,
-      }).catch(console.error),
+      transporter
+        .sendMail({
+          from: `"Rep Protector" <${process.env.EMAIL_USER}>`,
+          to: process.env.ADMIN_EMAIL!,
+          subject: "New Paid Order",
+          html: emailHtml,
+        })
+        .catch(console.error),
     ]);
 
     return NextResponse.json({ success: true });

@@ -1,6 +1,7 @@
 import Faq from "./faq";
 import Footer from "./footer";
 import Hero from "./hero";
+import HowItWorks from "./how-it-works";
 import HowWeRespond from "./how-we-respond";
 import NavBar from "./nav-bar";
 import Platforms from "./platforms";
@@ -12,8 +13,9 @@ export default function LandingLayout() {
         <section className="no-scrollbar">
             <NavBar />
             <Hero />
-            <Services />
             <Platforms />
+            <HowItWorks />
+            <Services />
             <RemoveHarmfulReviews />
             <HowWeRespond />
             <Faq />

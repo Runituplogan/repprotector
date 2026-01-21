@@ -63,15 +63,16 @@ export default function Hero() {
       <Wrapper className="h-screen flex flex-col items-center justify-center gap-y-[1.4rem] lg:justify-between lg:flex-row">
         <div className="max-w-[67rem] flex flex-col items-center lg:items-start gap-y-[1.2rem]">
           <p className="bg-primary-light p-[1rem] text-base rounded-full text-primary">
-            Join over 1400+ business today
+            Join over 400+ business today
           </p>
 
           <h1 className="text-[2.8rem] text-center lg:text-start lg:text-[4.9rem] font-playfair font-bold text-black leading-snug">
-            Your Business Deserves to Be Found by the Right People
+            Your Business Deserves to
+            Be Found by the Right People
           </h1>
 
           <p className="text-black text-base text-center lg:text-start">
-            Rep Protector helps you earn trust and grow your online reputation
+            RepProtector helps you earn trust and grow your online reputation
           </p>
 
           <Button

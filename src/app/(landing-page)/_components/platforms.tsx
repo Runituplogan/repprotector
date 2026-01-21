@@ -4,55 +4,53 @@ import { ArrowRight } from 'lucide-react'
 import { GlassDoorIcon, GoogleIcon, GoogleXs, HomeAdvisorIcon, OpenDoor, TripAdvisorIcon, TrustPilotIcon, YelpIcon } from "@/src/icons";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "@/src/utils/routes";
-import Cta from "./cta";
-
 const platforms = [
     {
         icon: <GoogleIcon />,
-        title: "Google Business Profile",
-        description: "Get noticed where local customers search",
+        title: "Google My Business",
+        description: "Be the first business people find when they search locally.",
         color: "text-blue-100",
-        slug: "google-business-profile",
+        slug: "google-my-business",
     },
     {
         icon: <TrustPilotIcon />,
         title: "Trustpilot",
         slug: "trustpilot",
-        description: "Earn trust before customers commit",
+        description: "Show proof and trust on a platform buyers rely on.",
         color: "text-green-100",
     },
     {
         icon: <GlassDoorIcon />,
         title: "GlassDoor",
-        description: "Influence travelers at decision time",
+        description: "Shape how employees and candidates perceive your company.",
         color: "text-green-100",
         slug: "glassdoor",
     },
     {
         icon: <OpenDoor />,
-        title: "Open Table",
-        description: "Build confidence for more installs",
-        color: "text-red-100",
-        slug: "open-table",
+        title: "Better Business Bureau",
+        description: "Show your trustworthiness through clear ratings and customer reviews.",
+        color: "text-blue-100",
+        slug: "better-business-bureau",
     },
     {
         icon: <YelpIcon />,
         title: "Yelp",
-        description: "Win trust in competitive local markets",
+        description: "Strengthen your reputation on the platform locals rely on.",
         color: "text-pink-100",
         slug: "yelp",
     },
     {
         icon: <TripAdvisorIcon />,
         title: "TripAdvisor",
-        description: "Influence travelers at decision time",
+        description: "Get discovered by more travelers planning their next trip.",
         color: "text-green-100",
         slug: "tripadvisor",
     },
     {
         icon: <HomeAdvisorIcon />,
         title: "HomeAdvisor",
-        description: "Win trust in competitive local markets",
+        description: "Be the professional homeowners choose with confidence",
         color: "text-orange-800",
         slug: "homeadvisor",
     },
@@ -89,8 +87,6 @@ export default function Platforms() {
                     <p className="text-black">Looking for reviews on a different platform?</p>
                     <p onClick={() => router.push(ROUTES.calendly)} className="text-primary cursor-pointer underline flex items-center font-semibold" >Click here to see if we can help <ArrowRight size={15} /> </p>
                 </div>
-
-                <Cta />
             </Wrapper>
         </section>
     )

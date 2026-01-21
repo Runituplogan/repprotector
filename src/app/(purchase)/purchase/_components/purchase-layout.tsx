@@ -69,10 +69,10 @@ const services: Service[] = [
     },
     {
         id: 4,
-        slug: "open-table",
+        slug: "better-business-bureau",
         icon: OpenTable,
         smIcon: PlayStoreXs,
-        title: "Open Table",
+        title: "Better Business Bureau",
     },
     {
         id: 5,

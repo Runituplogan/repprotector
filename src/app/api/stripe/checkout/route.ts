@@ -11,21 +11,29 @@ export async function POST(req: Request) {
 
         const {
             service,
+            serviceSlug,
             optionKey,
             optionTitle,
             unitPrice,
             quantity,
+            totalPrice,
             customerEmail,
+            phoneNumber,
+            duration,
             formData,
         } = body;
 
         console.log("Received data:", {
             service,
+            serviceSlug,
             optionKey,
             optionTitle,
             unitPrice,
             quantity,
+            totalPrice,
             customerEmail,
+            phoneNumber,
+            duration,
         });
 
         if (!unitPrice || isNaN(unitPrice)) {
@@ -36,29 +44,52 @@ export async function POST(req: Request) {
             throw new Error("Invalid quantity");
         }
 
+        if (!customerEmail) {
+            throw new Error("Customer email is required");
+        }
+
+        if (!phoneNumber) {
+            throw new Error("Phone number is required");
+        }
+
+        if (!duration) {
+            throw new Error("Duration is required");
+        }
+
         const session = await stripe.checkout.sessions.create({
             mode: "payment",
             payment_method_types: ["card"],
             customer_email: customerEmail,
+
             line_items: [
                 {
                     price_data: {
                         currency: "usd",
                         product_data: {
                             name: `${service} – ${optionTitle}`,
+                            description: `Duration: ${duration}`,
                         },
                         unit_amount: Math.round(unitPrice * 100),
                     },
                     quantity: Math.round(quantity),
                 },
             ],
+
             metadata: {
                 service,
+                serviceSlug,
                 optionKey,
                 optionTitle,
+                duration: String(duration),
+                phoneNumber: String(phoneNumber),
+                quantity: String(quantity),
+                unitPrice: String(unitPrice),
+                totalPrice: String(totalPrice ?? unitPrice * quantity),
+                customerEmail,
                 formData: JSON.stringify(formData),
             },
-            success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+
+            success_url: `${process.env.NEXT_PUBLIC_APP_URL}/calendly?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}`,
         });
 
@@ -91,8 +122,7 @@ export async function POST(req: Request) {
                 message,
                 data,
             },
-            { status: 500 }
+            { status: 500 },
         );
-
     }
 }

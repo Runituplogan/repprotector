@@ -8,7 +8,9 @@ export type ServiceOptionKey =
 export type ServiceFieldKey =
     | "fullName"
     | "email"
+    | "phoneNumber"
     | "platformUrl"
+    | "duration"
     | "quantity"
     | "availableReviews"
     | "pricing"
@@ -18,9 +20,11 @@ export type ServiceFieldKey =
 export const baseFields = {
     fullName: z.string().min(2),
     email: z.string().email(),
+    phoneNumber: z.number().min(8),
     platformUrl: z.string().url(),
     quantity: z.number().min(1),
     reviewCount: z.number().min(1),
+    duration: z.string(),
     availableReviews: z.number().min(1),
     additionalInfo: z.string().optional(),
     pricing: z.number().optional(),
@@ -29,28 +33,29 @@ export const baseFields = {
 export const SERVICE_OPTIONS = [
     {
         key: "auto_review_outreach",
-        title: "Auto-Review Outreach",
-        fields: ["fullName", "email", "quantity", "pricing"] as const,
-        price: 20,
+        title: "Get More Reviews",
+        fields: ["fullName", "email", "phoneNumber", "platformUrl", "quantity", "additionalInfo", "pricing",] as const,
+        price: 50,
     },
     {
         key: "address_reviews",
-        title: "Address Negative or Invalid Reviews",
+        title: "Dispute Negative/Invalid Reviews",
         fields: [
             "fullName",
             "email",
+            "phoneNumber",
             "platformUrl",
             "quantity",
             "additionalInfo",
             "pricing",
         ] as const,
-        price: 200,
+        price: 100,
     },
     {
         key: "respond_feedback",
         title: "Respond to Customer Feedback",
-        fields: ["fullName", "email", "quantity", "pricing"] as const,
-        price: 20,
+        fields: ["fullName", "email", "phoneNumber", "platformUrl", "duration", "additionalInfo", "pricing"] as const,
+        price: 500,
     },
 ] as const;
 

@@ -30,6 +30,7 @@ import { ChevronDown } from "lucide-react";
 import { Textarea } from "@/src/components/text-area";
 import Spinner from "@/src/components/spinner";
 import toast from "react-hot-toast";
+import Select from "@/src/components/select";
 
 type Service = {
   id: number;
@@ -96,6 +97,34 @@ type CalculatePriceArgs = {
   quantity?: number;
 };
 
+export const DURATION_PRICING = [
+  {
+    label: "1 Month",
+    value: "1",
+    price: 500,
+  },
+  {
+    label: "2 Months",
+    value: "2",
+    price: 900,
+  },
+  {
+    label: "3 Months",
+    value: "3",
+    price: 1250,
+  },
+  {
+    label: "6 Months",
+    value: "6",
+    price: 2300,
+  },
+  {
+    label: "1 Year",
+    value: "12",
+    price: 4000,
+  },
+] as const;
+
 export const calculatePrice = ({ price, quantity }: CalculatePriceArgs) => {
   const qty = Number(quantity) || 0;
   return formatNumber(price * qty);
@@ -124,7 +153,7 @@ export default function PurchaseLayout({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { watch, register, setValue } = useForm<FormSchemaType>({
+  const { watch, register, setValue, control } = useForm<FormSchemaType>({
     mode: "onChange",
     defaultValues: {
       service: slug ?? services[0].slug,
@@ -134,6 +163,7 @@ export default function PurchaseLayout({
           fullName: "",
           email: "",
           quantity: 0,
+          duration: "1",
           pricing: SERVICE_OPTIONS.find(
             (o) => o.key === "auto_review_outreach",
           )!.price,
@@ -143,20 +173,32 @@ export default function PurchaseLayout({
           email: "",
           platformUrl: "",
           quantity: 0,
+          duration: "1",
           additionalInfo: "",
-          pricing: SERVICE_OPTIONS.find((o) => o.key === "address_reviews")!
-            .price,
+          pricing: SERVICE_OPTIONS.find((o) => o.key === "address_reviews")!.price,
         },
         respond_feedback: {
           fullName: "",
           email: "",
           quantity: 0,
-          pricing: SERVICE_OPTIONS.find((o) => o.key === "respond_feedback")!
-            .price,
+          duration: "1",
+          pricing: SERVICE_OPTIONS.find(
+            (o) => o.key === "respond_feedback",
+          )!.price,
         },
       },
     },
   });
+
+  const getDurationForOption = (optionKey: ServiceOptionKey) =>
+    watch(`data.${optionKey}.duration`) || "1";
+
+  const getUnitPriceForOption = (optionKey: ServiceOptionKey) => {
+    const durationValue = getDurationForOption(optionKey);
+    const found = DURATION_PRICING.find((d) => d.value === durationValue);
+    return found?.price || 0;
+  };
+
 
   const autoReviewQuantity = watch("data.auto_review_outreach.quantity") ?? 0;
   const addressReviewsQuantity = watch("data.address_reviews.quantity") ?? 0;
@@ -177,18 +219,18 @@ export default function PurchaseLayout({
 
   const handleQuantityChange =
     (optionKey: ServiceOptionKey) =>
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
 
-      if (value === "") {
-        setValue(`data.${optionKey}.quantity`, 0);
-      } else {
-        const numValue = parseInt(value, 10);
-        if (!isNaN(numValue) && numValue >= 0) {
-          setValue(`data.${optionKey}.quantity`, numValue);
+        if (value === "") {
+          setValue(`data.${optionKey}.quantity`, 0);
+        } else {
+          const numValue = parseInt(value, 10);
+          if (!isNaN(numValue) && numValue >= 0) {
+            setValue(`data.${optionKey}.quantity`, numValue);
+          }
         }
-      }
-    };
+      };
 
   const handleOptionToggle = (optionKey: ServiceOptionKey) => {
     const newOption = activeOption === optionKey ? null : optionKey;
@@ -209,10 +251,13 @@ export default function PurchaseLayout({
         selectedData.fullName.length >= 2 &&
         selectedData.email &&
         selectedData.email.includes("@") &&
+        selectedData.phoneNumber && 
+        String(selectedData.phoneNumber).length >= 8 &&  
         selectedData.quantity &&
         selectedData.quantity >= 1
       );
     }
+
     if (activeOption === "address_reviews") {
       const data = selectedData as FormSchemaType["data"]["address_reviews"];
 
@@ -221,6 +266,8 @@ export default function PurchaseLayout({
         data.fullName.length >= 2 &&
         data.email &&
         data.email.includes("@") &&
+        data.phoneNumber &&  
+        String(data.phoneNumber).length >= 8 &&  
         data.platformUrl &&
         data.platformUrl.startsWith("http") &&
         data.quantity &&
@@ -229,33 +276,38 @@ export default function PurchaseLayout({
     }
 
     if (activeOption === "respond_feedback") {
+      const data = selectedData as FormSchemaType["data"]["respond_feedback"];
+
       return !!(
-        selectedData.fullName &&
-        selectedData.fullName.length >= 2 &&
-        selectedData.email &&
-        selectedData.email.includes("@") &&
-        selectedData.quantity &&
-        selectedData.quantity >= 1
+        data.fullName &&
+        data.fullName.length >= 2 &&
+        data.email &&
+        data.email.includes("@") &&
+        data.phoneNumber &&  
+        String(data.phoneNumber).length >= 8 &&  
+        data.platformUrl &&
+        data.platformUrl.startsWith("http")
       );
     }
 
     return false;
   };
 
-  // Manual submit handler
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
       const formData = watch();
-      const optionConfig = SERVICE_OPTIONS.find((o) => o.key === activeOption);
+      const optionConfig = SERVICE_OPTIONS.find(
+        (o) => o.key === activeOption,
+      );
 
-      if (!optionConfig) {
+      if (!optionConfig || !activeOption) {
         return;
       }
 
-      const selectedOptionData = formData.data[activeOption!];
+      const selectedOptionData = formData.data[activeOption];
       const quantity = selectedOptionData.quantity ?? 0;
 
       const res = await fetch("/api/stripe/checkout", {
@@ -264,12 +316,18 @@ export default function PurchaseLayout({
         body: JSON.stringify({
           service: activeService.title,
           serviceSlug: activeService.slug,
+
           optionKey: activeOption,
           optionTitle: optionConfig.title,
+
           unitPrice: optionConfig.price,
-          quantity,
+          quantity: activeOption === "respond_feedback" ? 1 : quantity,
           totalPrice: optionConfig.price * quantity,
+
           customerEmail: selectedOptionData.email,
+          phoneNumber: selectedOptionData.phoneNumber,
+          duration: selectedOptionData.duration,
+
           formData: selectedOptionData,
         }),
       });
@@ -289,6 +347,7 @@ export default function PurchaseLayout({
     }
   };
 
+
   return (
     <section
       className={cn(
@@ -298,30 +357,40 @@ export default function PurchaseLayout({
     >
       <Wrapper className="space-y-[3.2rem] lg:space-y-[4.4rem]">
         <Header showBackButton={showBackButton} />
-        <ul className="relative mx-auto mt-[2.2rem] flex w-[65.0rem] items-center justify-between">
-          <span className="absolute left-[2%] top-[30%] z-10 block h-[1px] w-[98%] bg-[#DFC9FA]"></span>
-          <li className="z-20 flex flex-col items-center gap-[.8rem]">
-            <div className="flex size-[4rem] items-center justify-center rounded-full border-[.2rem] border-white bg-primary p-0 text-sm font-bold text-white shadow-[0_0_12px_rgba(0,0,0,0.35)]">
+        <ul className="relative mx-auto mt-[2.2rem] flex w-full max-w-[65rem] items-center justify-between px-[1.2rem] sm:px-[2rem]">
+
+          <span className="absolute left-[6%] right-[6%] top-[30%] z-10 block h-[1px] bg-[#DFC9FA] sm:left-[4%] sm:right-[4%] lg:left-[10%] lg:right-[10%]"></span>
+
+
+          <li className="z-20 flex flex-col items-center gap-[.6rem] sm:gap-[.8rem]">
+            <div className="flex size-[3.2rem] sm:size-[3.6rem] lg:size-[4rem] items-center justify-center rounded-full border-[.2rem] border-white bg-primary text-xs sm:text-sm font-bold text-white shadow-[0_0_12px_rgba(0,0,0,0.35)]">
               1
             </div>
-            <p className="font-medium text-grey-600"> Purchase</p>
+            <p className="text-xs sm:text-sm font-medium text-grey-600">
+              Purchase
+            </p>
           </li>
-          <li className="z-20 flex flex-col items-center gap-[.8rem]">
-            <div className="flex size-[4rem] items-center justify-center rounded-full border-[.2rem] border-white bg-primary p-0 text-sm font-bold text-white shadow-[0_0_12px_rgba(0,0,0,0.35)]">
+
+
+          <li className="z-20 flex flex-col items-center gap-[.6rem] sm:gap-[.8rem]">
+            <div className="flex size-[3.2rem] sm:size-[3.6rem] lg:size-[4rem] items-center justify-center rounded-full border-[.2rem] border-white bg-primary text-xs sm:text-sm font-bold text-white shadow-[0_0_12px_rgba(0,0,0,0.35)]">
               2
             </div>
-            <p className="font-medium text-grey-600">
-              {" "}
+            <p className="max-w-[9rem] sm:max-w-none text-center text-xs sm:text-sm font-medium text-grey-600">
               Book a call with an expert
             </p>
           </li>
-          <li className="z-20 flex flex-col items-center gap-[.8rem]">
-            <div className="flex size-[4rem] items-center justify-center rounded-full border-[.2rem] border-white bg-primary p-0 text-sm font-bold text-white shadow-[0_0_12px_rgba(0,0,0,0.35)]">
+
+          <li className="z-20 flex flex-col items-center gap-[.6rem] sm:gap-[.8rem]">
+            <div className="flex size-[3.2rem] sm:size-[3.6rem] lg:size-[4rem] items-center justify-center rounded-full border-[.2rem] border-white bg-primary text-xs sm:text-sm font-bold text-white shadow-[0_0_12px_rgba(0,0,0,0.35)]">
               3
             </div>
-            <p className="font-medium text-grey-600"> Scale</p>
+            <p className="text-xs sm:text-sm font-medium text-grey-600">
+              Scale
+            </p>
           </li>
         </ul>
+
         <main className="flex flex-col items-start justify-between lg:flex-row">
           {/* Services */}
           <div className="hidden max-w-[58rem] grid-cols-2 gap-[1rem] lg:grid">
@@ -358,9 +427,8 @@ export default function PurchaseLayout({
                 </span>
               </div>
               <ChevronDown
-                className={`text-gray-600 h-10 w-10 transition-transform ${
-                  isServiceDropdownOpen ? "rotate-180" : ""
-                }`}
+                className={`text-gray-600 h-10 w-10 transition-transform ${isServiceDropdownOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 
@@ -374,11 +442,10 @@ export default function PurchaseLayout({
                       setActiveService(service);
                       setIsServiceDropdownOpen(false);
                     }}
-                    className={`flex w-full items-center gap-3 border-b border-grey-100 px-4 py-3 last:border-b-0 ${
-                      activeService.id === service.id
-                        ? "bg-purple-50"
-                        : "hover:bg-gray-50"
-                    }`}
+                    className={`flex w-full items-center gap-3 border-b border-grey-100 px-4 py-3 last:border-b-0 ${activeService.id === service.id
+                      ? "bg-purple-50"
+                      : "hover:bg-gray-50"
+                      }`}
                   >
                     <service.smIcon />
                     <span className="font-semibold text-grey-400">
@@ -425,20 +492,31 @@ export default function PurchaseLayout({
                           {...register(`data.${option.key}.email`)}
                         />
                       );
+
+
+                    case "phoneNumber":
+                      return (
+                        <Input
+                          key={field}
+                          placeholder="Phone number"
+                          type="number"
+                          {...register(`data.${option.key}.phoneNumber`)}
+                        />
+                      );
+
                     case "platformUrl":
-                      if (option.key !== "address_reviews") return null;
 
                       return (
                         <Input
                           key={field}
-                          placeholder="Platform URL"
+                          placeholder="Company URL"
                           type="url"
-                          {...register("data.address_reviews.platformUrl")}
+                          {...register(`data.${option.key}.platformUrl`)}
                         />
                       );
 
                     case "additionalInfo":
-                      if (option.key !== "address_reviews") return null;
+
 
                       return (
                         <Textarea
@@ -466,25 +544,63 @@ export default function PurchaseLayout({
                           min={0}
                         />
                       );
-                    case "pricing":
+
+                    case "pricing": {
+                      const pricingValue = watch(`data.${option.key}.pricing`);
+
+                      const total = formatNumber(pricingValue || 0);
+
                       return (
-                        <Input
-                          key={field}
-                          disabled
-                          placeholder="Pricing"
-                          value={`$${calculatePrice({
-                            price: option.price,
-                            quantity: getQuantityForOption(option.key),
-                          })}`}
-                          variation="secondary"
-                        />
+                        <div key={field} className="space-y-[1.2rem]">
+                          {activeOption !== "respond_feedback" && (
+                            <p className="text-black text-base">
+                              Price per review: ${getUnitPriceForOption(option.key)}
+                            </p>
+                          )}
+
+                          <Input
+                            disabled
+                            placeholder="Total"
+                            value={`Total: $${total}`}
+                            variation="secondary"
+                            className="text-[#B8B8B8]"
+                          />
+                        </div>
                       );
+                    }
+
+
+
+                    case "duration": {
+                      const quantity = getQuantityForOption(option.key);
+                      const unitPrice = getUnitPriceForOption(option.key);
+
+                      return (
+                        <div key={field} className="relative">
+                          <Select
+                            name={`data.${option.key}.duration`}
+                            control={control}
+                            options={DURATION_PRICING.map((d) => ({ label: d.label, value: d.value }))}
+                            placeholder="Duration"
+                            onChange={(selectedValue) => {
+
+                              setValue(`data.${option.key}.duration`, selectedValue);
+
+                              const unitPrice = DURATION_PRICING.find(d => d.value === selectedValue)?.price || 0;
+                              const quantity = getQuantityForOption(option.key);
+                              setValue(`data.${option.key}.pricing`, unitPrice * quantity);
+                            }}
+                          />
+
+                        </div>
+                      );
+                    }
+
                     default:
                       return null;
                   }
                 })}
 
-                <p className="text-black">Price per review: ${option.price}</p>
               </CustomOptionFieldset>
             ))}
 

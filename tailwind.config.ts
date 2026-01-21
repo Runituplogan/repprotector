@@ -29,12 +29,12 @@ export default {
       secondary: "#F2E8FF",
       "grey-100": "#E8E8E8",
       "grey-400": "#666666",
-      "grey-600": '#333333',
+      "grey-600": "#333333",
       "blue-100": "#379DFF",
       "green-100": "#26970C",
       "red-100": "#DB221F",
       "pink-100": "#C988A8",
-      "orange-800": "#C7752A"
+      "orange-800": "#C7752A",
     },
     fontSize: {
       xs: "1.2rem",

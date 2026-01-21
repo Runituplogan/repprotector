@@ -59,20 +59,21 @@ const faqsContent = [
   },
 ];
 
-
 export default function Faq() {
   return (
-    <section className="py-[10rem] pb-[8rem] relative ">
-      <Wrapper className="grid grid-cols-1 md:grid-cols-2 gap-y-[4rem] md:gap-y-[0]">
-        <header className="text-black space-y-[1.2rem] text-center md:text-start">
-          <h1 className="font-bold text-[3rem] md:text-[5rem] font-playfair leading-[3rem] md:leading-[5.5rem]">Everything <br /> Businesses Ask</h1>
+    <section className="relative py-[10rem] pb-[8rem]">
+      <Wrapper className="grid grid-cols-1 gap-y-[4rem] md:grid-cols-2 md:gap-y-[0]">
+        <header className="space-y-[1.2rem] text-center text-black md:text-start">
+          <h1 className="font-playfair text-[3rem] font-bold leading-[3rem] md:text-[5rem] md:leading-[5.5rem]">
+            Everything <br /> Businesses Ask
+          </h1>
           <p>Common questions about using our service for your business.</p>
         </header>
         <Accordion accordionData={faqsContent} />
       </Wrapper>
-      <div className="absolute top-0 z-[-1]">
+      {/* <div className="absolute top-0 z-[-1]">
         <Glow />
-      </div>
+      </div> */}
     </section>
-  )
+  );
 }

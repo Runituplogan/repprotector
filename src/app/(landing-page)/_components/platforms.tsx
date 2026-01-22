@@ -68,7 +68,7 @@ export default function Platforms() {
                 </header>
                 <section className="flex flex-wrap items-center justify-center gap-x-[1rem] gap-y-[2rem]">
                     {platforms.map((platform, index) => (
-                        <div key={index} className="md:max-w-[28.3rem] h-[27rem] overflow-hidden w-full flex flex-col items-center gap-y-[.5rem] bg-white rounded-[.847rem] border-[.1rem] border-[#E8E8E8] px-[1rem] py-[1.8rem]">
+                        <div key={index} className="md:max-w-[28.3rem] h-[28rem] overflow-hidden w-full flex flex-col items-center gap-y-[.5rem] bg-white rounded-[.847rem] border-[.1rem] border-[#E8E8E8] px-[1rem] py-[1.8rem]">
                             <h3 className="text-base text-black font-semibold">{platform.title}</h3>
                             <p className="text-sm text-black text-center h-[3.4rem]">{platform.description}</p>
                             <button

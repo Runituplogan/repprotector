@@ -83,7 +83,7 @@ export default function HowWeRespond() {
               </p>
             </div>
           </div>
-          <header className="flex flex-col items-center justify-center space-y-[1.2rem] text-center text-black">
+          <header className="flex flex-col items-center justify-center space-y-[1.2rem] text-center text-black max-w-[72rem]">
             <h1 className="text-center font-playfair text-[3rem] font-bold leading-[3rem] md:text-[5rem] md:leading-[5.5rem]">
               Respond to Customer Feedback
             </h1>

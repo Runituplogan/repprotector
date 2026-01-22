@@ -25,7 +25,7 @@ export default function HowItWorks() {
     return (
         <Wrapper>
             <div className="relative z-[2] flex flex-col items-center gap-[4.2rem] py-[5rem]">
-                <header className="flex flex-col items-center max-w-[42.2rem]">
+                <header className="flex flex-col items-center ">
                     <h1 className="font-bold text-[3.2rem] md:text-[5rem] font-playfair text-black">How It Works</h1>
                     <p className="text-grey-600 text-center">We&apos;ve streamlined the process of building your online reputation into three effective steps.</p>
                 </header>

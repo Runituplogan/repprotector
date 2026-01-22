@@ -23,18 +23,6 @@ export async function POST(req: Request) {
             formData,
         } = body;
 
-        console.log("Received data:", {
-            service,
-            serviceSlug,
-            optionKey,
-            optionTitle,
-            unitPrice,
-            quantity,
-            totalPrice,
-            customerEmail,
-            phoneNumber,
-            duration,
-        });
 
         if (!unitPrice || isNaN(unitPrice)) {
             throw new Error("Invalid unit price");
@@ -52,7 +40,7 @@ export async function POST(req: Request) {
             throw new Error("Phone number is required");
         }
 
-        if (!duration) {
+        if (!duration && service === "respond_feedback") {
             throw new Error("Duration is required");
         }
 

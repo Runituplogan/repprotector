@@ -184,7 +184,7 @@ const Select = <T extends FieldValues>({
                             "ml-[0.8rem] shrink-0 text-grey-400 transition-all duration-300",
                             {
                                 "rotate-180": isOpen,
-                                "text-black": selectedOptions.length > 0,
+                                "text-[#B8B8B8]": selectedOptions.length > 0,
                             },
                         )}
                     />

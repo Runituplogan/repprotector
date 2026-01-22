@@ -163,42 +163,38 @@ export default function PurchaseLayout({
           fullName: "",
           email: "",
           quantity: 0,
-          duration: "1",
-          pricing: SERVICE_OPTIONS.find(
-            (o) => o.key === "auto_review_outreach",
-          )!.price,
+          duration: "",
+          pricing: 0,
         },
         address_reviews: {
           fullName: "",
           email: "",
           platformUrl: "",
           quantity: 0,
-          duration: "1",
+          duration: "",
           additionalInfo: "",
-          pricing: SERVICE_OPTIONS.find((o) => o.key === "address_reviews")!.price,
+          pricing: 0,
         },
         respond_feedback: {
           fullName: "",
           email: "",
           quantity: 0,
-          duration: "1",
-          pricing: SERVICE_OPTIONS.find(
-            (o) => o.key === "respond_feedback",
-          )!.price,
+          duration: "",
+          pricing: 0,
         },
       },
     },
   });
 
   const getDurationForOption = (optionKey: ServiceOptionKey) =>
-    watch(`data.${optionKey}.duration`) || "1";
+    watch(`data.${optionKey}.duration`) || "";
 
   const getUnitPriceForOption = (optionKey: ServiceOptionKey) => {
     const durationValue = getDurationForOption(optionKey);
+    if (!durationValue) return 0;
     const found = DURATION_PRICING.find((d) => d.value === durationValue);
     return found?.price || 0;
   };
-
 
   const autoReviewQuantity = watch("data.auto_review_outreach.quantity") ?? 0;
   const addressReviewsQuantity = watch("data.address_reviews.quantity") ?? 0;
@@ -217,19 +213,50 @@ export default function PurchaseLayout({
     }
   };
 
+  const updatePricingForOption = (optionKey: ServiceOptionKey, newQuantity?: number) => {
+    if (optionKey === "respond_feedback") {
+      const durationValue = watch(`data.${optionKey}.duration`);
+      if (!durationValue) {
+        setValue(`data.${optionKey}.pricing`, 0);
+      } else {
+        const durationPrice = DURATION_PRICING.find(d => d.value === durationValue)?.price || 0;
+        setValue(`data.${optionKey}.pricing`, durationPrice);
+      }
+    } else {
+      const quantity = newQuantity !== undefined ? newQuantity : getQuantityForOption(optionKey);
+      const selectedOption = SERVICE_OPTIONS.find((option) => option.key === optionKey);
+
+      if (quantity === 0) {
+        setValue(`data.${optionKey}.pricing`, 0);
+      } else {
+        const unitPrice = selectedOption?.price || 0;
+        setValue(`data.${optionKey}.pricing`, unitPrice * quantity);
+      }
+    }
+  };
+
   const handleQuantityChange =
     (optionKey: ServiceOptionKey) =>
       (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
 
+        let newQuantity: number;
+
         if (value === "") {
+          newQuantity = 0;
           setValue(`data.${optionKey}.quantity`, 0);
         } else {
           const numValue = parseInt(value, 10);
           if (!isNaN(numValue) && numValue >= 0) {
+            newQuantity = numValue;
             setValue(`data.${optionKey}.quantity`, numValue);
+          } else {
+            newQuantity = 0;
           }
         }
+
+       
+        updatePricingForOption(optionKey, newQuantity);
       };
 
   const handleOptionToggle = (optionKey: ServiceOptionKey) => {
@@ -251,27 +278,30 @@ export default function PurchaseLayout({
         selectedData.fullName.length >= 2 &&
         selectedData.email &&
         selectedData.email.includes("@") &&
-        selectedData.phoneNumber && 
-        String(selectedData.phoneNumber).length >= 8 &&  
+        selectedData.phoneNumber &&
+        String(selectedData.phoneNumber).length >= 8 &&
         selectedData.quantity &&
-        selectedData.quantity >= 1
+        selectedData.quantity >= 1 &&
+        selectedData.pricing &&
+        selectedData.pricing > 0
       );
     }
 
     if (activeOption === "address_reviews") {
       const data = selectedData as FormSchemaType["data"]["address_reviews"];
-
       return !!(
         data.fullName &&
         data.fullName.length >= 2 &&
         data.email &&
         data.email.includes("@") &&
-        data.phoneNumber &&  
-        String(data.phoneNumber).length >= 8 &&  
+        data.phoneNumber &&
+        String(data.phoneNumber).length >= 8 &&
         data.platformUrl &&
         data.platformUrl.startsWith("http") &&
         data.quantity &&
-        data.quantity >= 1
+        data.quantity >= 1 &&
+        data.pricing &&
+        data.pricing > 0
       );
     }
 
@@ -283,10 +313,14 @@ export default function PurchaseLayout({
         data.fullName.length >= 2 &&
         data.email &&
         data.email.includes("@") &&
-        data.phoneNumber &&  
-        String(data.phoneNumber).length >= 8 &&  
+        data.phoneNumber &&
+        String(data.phoneNumber).length >= 8 &&
+        data.duration &&
+        data.duration.length > 0 &&
         data.platformUrl &&
-        data.platformUrl.startsWith("http")
+        data.platformUrl.startsWith("http") &&
+        data.pricing &&
+        data.pricing > 0
       );
     }
 
@@ -320,9 +354,9 @@ export default function PurchaseLayout({
           optionKey: activeOption,
           optionTitle: optionConfig.title,
 
-          unitPrice: optionConfig.price,
+          unitPrice: activeOption === "respond_feedback" ? selectedOptionData.pricing : optionConfig.price,
           quantity: activeOption === "respond_feedback" ? 1 : quantity,
-          totalPrice: optionConfig.price * quantity,
+          totalPrice: selectedOptionData.pricing,
 
           customerEmail: selectedOptionData.email,
           phoneNumber: selectedOptionData.phoneNumber,
@@ -346,7 +380,6 @@ export default function PurchaseLayout({
       setIsSubmitting(false);
     }
   };
-
 
   return (
     <section
@@ -493,7 +526,6 @@ export default function PurchaseLayout({
                         />
                       );
 
-
                     case "phoneNumber":
                       return (
                         <Input
@@ -505,7 +537,6 @@ export default function PurchaseLayout({
                       );
 
                     case "platformUrl":
-
                       return (
                         <Input
                           key={field}
@@ -516,14 +547,12 @@ export default function PurchaseLayout({
                       );
 
                     case "additionalInfo":
-
-
                       return (
                         <Textarea
                           key={field}
                           rows={7}
                           placeholder="Additional information"
-                          {...register("data.address_reviews.additionalInfo")}
+                          {...register(`data.${option.key}.additionalInfo`)}
                         />
                       );
 
@@ -546,22 +575,23 @@ export default function PurchaseLayout({
                       );
 
                     case "pricing": {
-                      const pricingValue = watch(`data.${option.key}.pricing`);
-
-                      const total = formatNumber(pricingValue || 0);
+                      const pricingValue = watch(`data.${option.key}.pricing`) || 0;
+                      const total = formatNumber(pricingValue);
+                      const unitPrice = option.price;
 
                       return (
                         <div key={field} className="space-y-[1.2rem]">
-                          {activeOption !== "respond_feedback" && (
+                          {option.key !== "respond_feedback" && (
                             <p className="text-black text-base">
-                              Price per review: ${getUnitPriceForOption(option.key)}
+                              Price per review: ${unitPrice}
                             </p>
                           )}
+
 
                           <Input
                             disabled
                             placeholder="Total"
-                            value={`Total: $${total}`}
+                            value={pricingValue > 0 ? `Total: $${total}` : "Total: $0"}
                             variation="secondary"
                             className="text-[#B8B8B8]"
                           />
@@ -569,12 +599,7 @@ export default function PurchaseLayout({
                       );
                     }
 
-
-
                     case "duration": {
-                      const quantity = getQuantityForOption(option.key);
-                      const unitPrice = getUnitPriceForOption(option.key);
-
                       return (
                         <div key={field} className="relative">
                           <Select
@@ -583,15 +608,10 @@ export default function PurchaseLayout({
                             options={DURATION_PRICING.map((d) => ({ label: d.label, value: d.value }))}
                             placeholder="Duration"
                             onChange={(selectedValue) => {
-
-                              setValue(`data.${option.key}.duration`, selectedValue);
-
-                              const unitPrice = DURATION_PRICING.find(d => d.value === selectedValue)?.price || 0;
-                              const quantity = getQuantityForOption(option.key);
-                              setValue(`data.${option.key}.pricing`, unitPrice * quantity);
+                              setValue(`data.respond_feedback.duration`, selectedValue);
+                              updatePricingForOption(option.key);
                             }}
                           />
-
                         </div>
                       );
                     }

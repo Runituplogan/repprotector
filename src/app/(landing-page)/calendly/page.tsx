@@ -21,8 +21,6 @@ export default function BookACallLayout() {
 
     useEffect(() => {
         if (!sessionId) {
-            toast.error("No payment data found");
-            router.replace("/");
             return;
         }
 

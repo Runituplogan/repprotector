@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { InlineWidget } from "react-calendly";
 import { configs } from "@/src/utils/config";
-import { ArrowLeft } from "lucide-react";
 import { ROUTES } from "@/src/utils/routes";
 import Wrapper from "@/src/components/wrapper";
 import toast from "react-hot-toast";
+import { ArrowLeft } from "@/src/icons";
 
 export default function BookACallLayout() {
     const params = useSearchParams();
@@ -55,7 +55,7 @@ export default function BookACallLayout() {
                 <header className="w-full flex flex-col items-start gap-y-[1.2rem] lg:gap-y-[0] lg:items-center lg:flex-row">
                     <button
                         onClick={() => router.push(ROUTES.root)}
-                        className="bg-primary p-[.9rem] lg:p-[1.5rem] rounded-[.8rem]"
+                        className="rounded-[.8rem] bg-primary-light p-[.9rem] text-black lg:p-[1.5rem]"
                     >
                         <ArrowLeft />
                     </button>
@@ -65,7 +65,7 @@ export default function BookACallLayout() {
                             Book A Call
                         </h1>
                         <p className="text-grey-600 text-center">
-                            Have a quick conversation about strengthening your reputation.
+                            Speak to one of our reputation management specialists.
                         </p>
                     </div>
                 </header>

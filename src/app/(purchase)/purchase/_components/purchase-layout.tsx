@@ -297,7 +297,7 @@ export default function PurchaseLayout({
         data.phoneNumber &&
         String(data.phoneNumber).length >= 8 &&
         data.platformUrl &&
-        data.platformUrl.startsWith("http") &&
+        data.platformUrl.length > 0 &&
         data.quantity &&
         data.quantity >= 1 &&
         data.pricing &&

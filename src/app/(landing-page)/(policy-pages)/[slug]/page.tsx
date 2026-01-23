@@ -73,7 +73,7 @@ export default async function PolicyPage({
 
   return (
     <>
-      <Wrapper className="no-scrollbar flex h-full flex-col gap-[3.2rem] py-[3.6rem] max-w-[113rem] pt-[5.2rem] text-grey-600">
+      <Wrapper className="no-scrollbar flex h-full flex-col gap-[3.2rem] py-[3.6rem] !max-w-[113rem] pt-[5.2rem] text-grey-600">
         <PolicyTitle title={formatTab(policy.title)} />
         <PolicyLayout policy={policy} />
       </Wrapper>

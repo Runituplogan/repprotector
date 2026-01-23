@@ -7,13 +7,13 @@ export default function NavBar() {
 
         <nav className='py-[2rem] bg-white border-b-[.1rem] border-b-grey-100 overflow-hidden fixed top-0 left-0 w-full z-40'>
             <Wrapper>
-                <div className="relative w-[200px] ">
+                <div className="relative w-[1500px] ">
                     <Image
-                        src="/RepProtector Logo 1.png"
+                        src="/rep-protector.png"
                         alt='RepProtector Logo 1'
-                        height={200}
-                        width={200}
-                        sizes="200px"
+                        height={150}
+                        width={150}
+                        sizes="150px"
                         priority={true}
                     />
                 </div>

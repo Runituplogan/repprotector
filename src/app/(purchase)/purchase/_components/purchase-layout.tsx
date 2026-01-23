@@ -388,7 +388,7 @@ export default function PurchaseLayout({
         className,
       )}
     >
-      <Wrapper className="space-y-[3.2rem] lg:space-y-[4.4rem]">
+      <Wrapper className="space-y-[3.2rem] max-w-[135rem] lg:space-y-[4.4rem]">
         <Header showBackButton={showBackButton} />
         <ul className="relative mx-auto mt-[2.2rem] flex w-full max-w-[65rem] items-center justify-between px-[1.2rem] sm:px-[2rem]">
 

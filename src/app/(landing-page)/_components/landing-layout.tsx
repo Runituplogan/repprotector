@@ -1,3 +1,5 @@
+"use client"
+import { handleHashScroll } from "@/src/utils";
 import PurchaseLayout from "../../(purchase)/purchase/_components/purchase-layout";
 import Faq from "./faq";
 import Footer from "./footer";
@@ -9,8 +11,19 @@ import NavBar from "./nav-bar";
 import Platforms from "./platforms";
 import ReviewProcess from "./review-process";
 import Services from "./services";
+import { useEffect } from "react";
 
 export default function LandingLayout() {
+
+  useEffect(() => {
+    const cleanup = handleHashScroll({
+      behavior: 'smooth',
+      delay: 150,
+      cleanup: true
+    });
+
+    return cleanup;
+  }, []);
   return (
     <section className="no-scrollbar">
       <NavBar />

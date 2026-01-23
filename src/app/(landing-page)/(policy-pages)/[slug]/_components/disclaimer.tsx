@@ -3,7 +3,7 @@ export default function Disclaimer() {
         <section className="text-sm leading-[3.5rem]">
             <p className="mb-[3rem]">Effective Date: January 1, 2026</p>
             <p>
-                RepProtector ("the Company"), based in Tennessee, provides online reputation management services to help individuals and businesses manage their online reviews and reputation. This includes assisting with review disputes and other reputation concerns by working with third-party platforms like Google and Yelp on your behalf. All content and services on the RepProtector website are provided in good faith for general information purposes. By using our website or services, you acknowledge and agree to the following terms of this Disclaimer.
+                RepProtector (&quot;the Company&quot;), based in Tennessee, provides online reputation management services to help individuals and businesses manage their online reviews and reputation. This includes assisting with review disputes and other reputation concerns by working with third-party platforms like Google and Yelp on your behalf. All content and services on the RepProtector website are provided in good faith for general information purposes. By using our website or services, you acknowledge and agree to the following terms of this Disclaimer.
             </p>
 
             <article className="my-[3.5rem]">
@@ -22,7 +22,7 @@ export default function Disclaimer() {
                 <p>We strive to help improve your online reputation, but RepProtector cannot guarantee any specific results or outcomes from the use of our services. Online platforms and search engines operate independently; as such, results will vary for each user. In particular, we do not guarantee:</p>
                 <ul className="text-gray-700 list-inside list-disc [&>li]:pl-6 [&>li]:-indent-6">
                     <li>
-                        Removal of Reviews or Content: While we assist in disputing negative reviews or requesting content removal, we do not guarantee the removal or modification of any review, comment, rating, or other content on third-party platforms. The decision to remove or alter user-generated content lies solely with the platform's administrators and policies, not with RepProtector.
+                        Removal of Reviews or Content: While we assist in disputing negative reviews or requesting content removal, we do not guarantee the removal or modification of any review, comment, rating, or other content on third-party platforms. The decision to remove or alter user-generated content lies solely with the platform&apos;s administrators and policies, not with RepProtector.
                     </li>
                     <li>
                         Search Result Changes: We cannot and do not guarantee specific improvements in search engine rankings or visibility of any particular piece of content. Search results are governed by complex algorithms and independent decisions of search engine providers. Due to the volatile nature of these algorithms and platform rules, no outcome (such as higher rankings or suppression of negative results) is assured.
@@ -46,10 +46,10 @@ export default function Disclaimer() {
                         No Affiliation or Endorsement: RepProtector is an independent service provider. We are not part of, affiliated with, or endorsed by Google, Yelp, Facebook/Meta, TripAdvisor, or any other third-party platform. All trademarks, service marks, and logos belonging to any third-party platforms (e.g., Google™, Yelp™, Facebook™, etc.) are the property of their respective owners, and use of those names on our site is for reference only. Our use of platform names or logos does not imply any partnership, sponsorship, or endorsement by them.
                     </li>
                     <li>
-                        No Control Over Platforms: We do not control the actions, decisions, or policies of any third-party website or service. When we assist you (for example, by submitting a review dispute or appeal), we are essentially facilitating a request under that platform's own rules. Final decisions about content (such as whether a review violates policy and should be removed) are made by the platform and are beyond our control. We cannot guarantee that a platform will respond to or act on any request in a particular way, or within any given timeframe.
+                        No Control Over Platforms: We do not control the actions, decisions, or policies of any third-party website or service. When we assist you (for example, by submitting a review dispute or appeal), we are essentially facilitating a request under that platform&apos;s own rules. Final decisions about content (such as whether a review violates policy and should be removed) are made by the platform and are beyond our control. We cannot guarantee that a platform will respond to or act on any request in a particular way, or within any given timeframe.
                     </li>
                     <li>
-                        Platform Policies Apply: All third-party platforms have their own terms of service, community guidelines, and content policies. Our interventions on your behalf must comply with those policies. You are subject to the terms and conditions of those third-party sites when using their services. For example, if we help dispute a Google review, Google's policies and processes will govern how that dispute is handled. We cannot circumvent or override any platform's rules or requirements.
+                        Platform Policies Apply: All third-party platforms have their own terms of service, community guidelines, and content policies. Our interventions on your behalf must comply with those policies. You are subject to the terms and conditions of those third-party sites when using their services. For example, if we help dispute a Google review, Google&apos;s policies and processes will govern how that dispute is handled. We cannot circumvent or override any platform&apos;s rules or requirements.
                     </li>
                     <li>
                         No Special Privileges: RepProtector does not have any special agreements or insider influence that would allow us to bypass standard procedures. We use the same public-facing channels and dispute mechanisms available to any user.
@@ -77,10 +77,10 @@ export default function Disclaimer() {
 
             <article className="my-[3.5rem]">
                 <h3 className="text-base font-bold md:text-lg">
-                    5. No Warranties ("As Is" Provision)
+                    5. No Warranties (&quot;As Is&quot; Provision)
                 </h3>
                 <p>
-                    RepProtector's website and services are provided on an "as is" and "as available" basis, without any warranties of any kind – express, implied, or statutory. We make no guarantees or warranties regarding the completeness, reliability, quality, accuracy, or availability of any information or service on our site. To the fullest extent permitted by law, we disclaim all warranties, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, non-infringement, and any warranty arising from course of dealing or usage of trade.
+                    RepProtector&apos;s website and services are provided on an &quot;as is&quot; and &quot;as available&quot; basis, without any warranties of any kind – express, implied, or statutory. We make no guarantees or warranties regarding the completeness, reliability, quality, accuracy, or availability of any information or service on our site. To the fullest extent permitted by law, we disclaim all warranties, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, non-infringement, and any warranty arising from course of dealing or usage of trade.
                 </p>
                 <p>In particular, we do not warrant or represent that: (a) our services will meet your requirements or expectations; (b) the information provided is completely error-free or up-to-date; (c) our services will achieve any intended result or outcome; or (d) the operation of our website or any service will be uninterrupted, timely, secure, or error-free. Any material or information obtained through our site is used at your own discretion.</p>
                 <p>
@@ -96,13 +96,13 @@ export default function Disclaimer() {
                     6. Use at Your Own Risk
                 </h3>
                 <p>
-                    Using RepProtector's website, services, and any information provided is entirely at your own risk. Any action you take based on the information or guidance on our site is strictly at your own risk. RepProtector will not be responsible or liable for the outcome of such actions. By using our services, you agree that RepProtector is not liable for any losses or damages that you may incur through the use of our website or our reputation management services.
+                    Using RepProtector&apos;s website, services, and any information provided is entirely at your own risk. Any action you take based on the information or guidance on our site is strictly at your own risk. RepProtector will not be responsible or liable for the outcome of such actions. By using our services, you agree that RepProtector is not liable for any losses or damages that you may incur through the use of our website or our reputation management services.
                 </p>
                 <p>
                     You are solely responsible for evaluating the information provided and how you implement any suggestions or advice in managing your online reputation. If you choose to rely on any information from RepProtector, you acknowledge that you do so voluntarily and with an understanding that you assume all responsibility for any consequences. We encourage you to use your judgment, and where appropriate, seek independent professional advice before making decisions that could affect your business, finances, or well-being.
                 </p>
                 <p>
-                    In summary, you agree that the use of RepProtector's services and website is at your sole risk. RepProtector, its owners, and employees will not be held responsible for any negative outcomes, including but not limited to reputational harm, business losses, or any other damages resulting from the information or services we provide.
+                    In summary, you agree that the use of RepProtector&apos;s services and website is at your sole risk. RepProtector, its owners, and employees will not be held responsible for any negative outcomes, including but not limited to reputational harm, business losses, or any other damages resulting from the information or services we provide.
                 </p>
             </article>
 
@@ -114,7 +114,7 @@ export default function Disclaimer() {
                     To the fullest extent permitted by law, RepProtector and its affiliates, owners, employees, and agents shall not be liable for any damages arising out of or in connection with your use of our website or services. This includes no liability for any indirect, special, incidental, consequential, or punitive damages, including but not limited to losses such as lost profits, lost revenue, lost business opportunities, loss of data, or loss of goodwill. We are not liable for any cost of procurement of substitute services or for any matter beyond our reasonable control.
                 </p>
                 <p>
-                    In particular, RepProtector will not be responsible for any loss or damage resulting from: the actions or decisions of third-party platforms (e.g., a platform's refusal to remove a review or a change in their algorithm that impacts your content), your reliance on any information obtained through our site, unauthorized access to our servers or any personal data, or any other intangible losses.
+                    In particular, RepProtector will not be responsible for any loss or damage resulting from: the actions or decisions of third-party platforms (e.g., a platform&apos;s refusal to remove a review or a change in their algorithm that impacts your content), your reliance on any information obtained through our site, unauthorized access to our servers or any personal data, or any other intangible losses.
                 </p>
                 <p>
                     If, notwithstanding the above, RepProtector is found liable to you for any claim or cause of action, our maximum aggregate liability will be strictly limited to the amount (if any) you have paid to us for the service(s) related to that claim. If you have received our services free of charge, or if the applicable law does not allow the limitation of liability to the amount paid, then other legal remedies might be available to you to the minimum extent allowed by law.
@@ -129,7 +129,7 @@ export default function Disclaimer() {
                     8. Governing Law
                 </h3>
                 <p>
-                    This Disclaimer and any disputes or claims arising out of your use of RepProtector's website or services shall be governed by and construed in accordance with the laws of the State of Tennessee, USA, without regard to its conflict of laws principles. By using our site or services, you agree that any legal action or proceeding between you and RepProtector shall be brought exclusively in the competent courts of the State of Tennessee. You consent to the personal jurisdiction of such courts and waive any objections on the grounds of venue or inconvenient forum, to the extent permitted under applicable law.
+                    This Disclaimer and any disputes or claims arising out of your use of RepProtector&apos;s website or services shall be governed by and construed in accordance with the laws of the State of Tennessee, USA, without regard to its conflict of laws principles. By using our site or services, you agree that any legal action or proceeding between you and RepProtector shall be brought exclusively in the competent courts of the State of Tennessee. You consent to the personal jurisdiction of such courts and waive any objections on the grounds of venue or inconvenient forum, to the extent permitted under applicable law.
                 </p>
             </article>
 

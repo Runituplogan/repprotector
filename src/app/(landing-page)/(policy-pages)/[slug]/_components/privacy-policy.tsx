@@ -3,7 +3,7 @@ export default function PrivacyPolicy() {
     <section className="text-sm leading-[3.5rem]">
       <p>Effective Date: January 22, 2026</p>
       <p>
-        RepProtector (the "Company," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your personal information when you use our website (repprotector.com) and related services. It also explains your choices and our practices regarding your information. By using our services, you agree to the collection and use of information in accordance with this policy.
+        RepProtector (the &quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your personal information when you use our website (repprotector.com) and related services. It also explains your choices and our practices regarding your information. By using our services, you agree to the collection and use of information in accordance with this policy.
       </p>
 
       <article className="my-[3.5rem]">
@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <p>We collect personal information that you voluntarily provide to us, as well as some information automatically when you use our site:</p>
         <ul className="text-gray-700 list-inside list-disc [&>li]:pl-6 [&>li]:-indent-6">
           <li>
-            Personal Information You Provide: When you fill out forms on our site or sign up for our services, we may ask for information such as your name, email address, phone number, company name or URL, and other contact details. If you engage our reputation management services, you may provide business-related information (like your company's review profiles or account details necessary for us to manage your reviews).
+            Personal Information You Provide: When you fill out forms on our site or sign up for our services, we may ask for information such as your name, email address, phone number, company name or URL, and other contact details. If you engage our reputation management services, you may provide business-related information (like your company&apos;s review profiles or account details necessary for us to manage your reviews).
           </li>
           <li>
             Payment Information: If you purchase services or subscriptions, payment details (such as credit card number, expiration date, and billing address) will be collected and processed securely by our third-party payment processor, Stripe. We do not store your full credit card information on our servers. (Stripe handles your payment information in accordance with their own privacy policy.)
@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
             Automatically Collected Data: When you visit our website, we may automatically collect certain information about your device and usage of the site. This can include your IP address, browser type, device identifiers, pages viewed, and the dates/times of access. We gather this data through cookies and similar tracking technologies (see Cookies and Tracking below).
           </li>
         </ul>
-        <p>We do not knowingly collect sensitive personal information (such as social security numbers, driver's license numbers, or health information) as part of our services. We also do not direct our services to children under 13 and do not knowingly collect personal information from anyone under 13 years of age.</p>
+        <p>We do not knowingly collect sensitive personal information (such as social security numbers, driver&apos;s license numbers, or health information) as part of our services. We also do not direct our services to children under 13 and do not knowingly collect personal information from anyone under 13 years of age.</p>
       </article>
 
       <article className="my-[3.5rem]">
@@ -32,7 +32,7 @@ export default function PrivacyPolicy() {
         <p>We use cookies and similar tracking technologies to enhance your experience on our site and to collect usage data:</p>
         <ul className="text-gray-700 list-inside list-disc [&>li]:pl-6 [&>li]:-indent-6">
           <li>
-            What Are Cookies? Cookies are small text files placed on your device when you visit a website. They help the site remember your preferences and activity either for a single visit (using a "session cookie") or for repeat visits (using a "persistent cookie"). We also may use related technologies like web beacons or pixels that work with cookies to collect information.
+            What Are Cookies? Cookies are small text files placed on your device when you visit a website. They help the site remember your preferences and activity either for a single visit (using a &quot;session cookie&quot;) or for repeat visits (using a &quot;persistent cookie&quot;). We also may use related technologies like web beacons or pixels that work with cookies to collect information.
           </li>
           <li>
             How We Use Cookies: We use cookies to enable certain site functionality, remember your preferences, and improve our services. For example, we use analytics cookies to understand how users navigate our site and to identify areas for improvement. Specifically, we use third-party analytics services such as Google Analytics. Google Analytics may set its own cookies to collect information about your interactions with our site (such as pages visited, time spent on pages, and referring website) and report website trends to us. This analytics data helps us improve the platform and user experience.
@@ -60,13 +60,13 @@ export default function PrivacyPolicy() {
             Communicating with You: We use contact information (like email and phone number) to communicate with you about your account and our services. This can include sending you service-related announcements, confirmations, invoices, technical notices, updates, security alerts, and support messages. We may also respond to your inquiries or requests submitted via our contact forms or email.
           </li>
           <li>
-            Processing Payments: If you make a purchase or subscription, we use payment information to process the transaction (through Stripe) and to handle billing. For example, we'll use your provided payment details to charge for services and send you receipts or notifications about the transaction.
+            Processing Payments: If you make a purchase or subscription, we use payment information to process the transaction (through Stripe) and to handle billing. For example, we&apos;ll use your provided payment details to charge for services and send you receipts or notifications about the transaction.
           </li>
           <li>
             Improving and Personalizing our Platform: We analyze usage data (from cookies and analytics tools) to understand how our website and services are used. This helps us troubleshoot issues, optimize site functionality, and develop new features. It also enables us to personalize content for you, such as customizing certain pages or remembering your preferences.
           </li>
           <li>
-            Marketing and Promotions (Optional): With your consent or as otherwise permitted, we may use your contact information to inform you about new features, services, promotions, or other news about RepProtector that might interest you. You will have the option to opt out of receiving promotional communications from us (for example, via an "unsubscribe" link in marketing emails).
+            Marketing and Promotions (Optional): With your consent or as otherwise permitted, we may use your contact information to inform you about new features, services, promotions, or other news about RepProtector that might interest you. You will have the option to opt out of receiving promotional communications from us (for example, via an &quot;unsubscribe&quot; link in marketing emails).
           </li>
           <li>
             Legal and Security Purposes: We may use personal information as necessary to enforce our Terms of Service or other agreements, to protect the rights and safety of our users, customers, or the public, and to detect or prevent fraud and abuse. Additionally, if required, we may use information to comply with applicable laws and regulations or respond to lawful requests from authorities.
@@ -151,7 +151,7 @@ export default function PrivacyPolicy() {
             Deletion of Data: You may request that we delete the personal information we have collected about you. While we currently do not offer a self-service deletion mechanism on our website, you can contact us to request deletion. We will evaluate such requests on a case-by-case basis and delete your information provided we have no legal obligation or overriding business need to retain it. Please understand that we are a small organization and are still developing our data management processes; thus, fulfilling deletion requests may take some time and may be subject to any legal requirements or exemptions.
           </li>
           <li>
-            Opt-Out of Communications: If we send you promotional emails, you have the choice to opt out. You can unsubscribe from marketing or newsletter emails at any time by clicking the "unsubscribe" link in those emails or by contacting us. Even if you opt out of promotional messages, we may still send you transactional or service-related communications (such as account notifications or billing receipts) as those are necessary for our services.
+            Opt-Out of Communications: If we send you promotional emails, you have the choice to opt out. You can unsubscribe from marketing or newsletter emails at any time by clicking the &quot;unsubscribe&quot; link in those emails or by contacting us. Even if you opt out of promotional messages, we may still send you transactional or service-related communications (such as account notifications or billing receipts) as those are necessary for our services.
           </li>
           <li>
             Cookies Preferences: As described in the Cookies and Tracking section, you can control or block cookies through your browser settings. You can also opt out of Google Analytics data collection specifically by using the Google Analytics Opt-out Browser Add-on. Adjusting cookie settings is a way to exercise choice over certain tracking.
@@ -177,10 +177,10 @@ export default function PrivacyPolicy() {
         <p>We are committed to complying with all applicable privacy laws and regulations in the United States, including federal law and relevant state laws:</p>
         <ul className="text-gray-700 list-inside list-disc [&>li]:pl-6 [&>li]:-indent-6">
           <li>
-            U.S. Privacy Laws: We adhere to applicable U.S. federal privacy requirements. For example, we comply with the Children's Online Privacy Protection Act (COPPA) by not collecting information from children under 13. We also follow guidelines set by the Federal Trade Commission (FTC) regarding fair information practices and data security. If we engage in email communications, we abide by the CAN-SPAM Act by providing recipients with the ability to opt out of marketing emails.
+            U.S. Privacy Laws: We adhere to applicable U.S. federal privacy requirements. For example, we comply with the Children&apos;s Online Privacy Protection Act (COPPA) by not collecting information from children under 13. We also follow guidelines set by the Federal Trade Commission (FTC) regarding fair information practices and data security. If we engage in email communications, we abide by the CAN-SPAM Act by providing recipients with the ability to opt out of marketing emails.
           </li>
           <li>
-            State Laws (including Tennessee): We strive to meet the obligations of emerging state privacy laws. In particular, as a company based in Tennessee, we are aware of and aim to comply with the Tennessee Information Protection Act (TIPA) and any regulations promulgated under it. TIPA (effective July 1, 2025) provides Tennessee residents with specific rights regarding their personal information (such as rights to access, correct, delete, and opt out of certain processing of personal data). We are taking steps to align our practices with TIPA's requirements to the extent they apply to our operations. Additionally, we intend to comply with other state privacy laws that may apply to us, such as the California Consumer Privacy Act (CCPA)/California Privacy Rights Act (CPRA), Virginia's Consumer Data Protection Act, and similar laws in Colorado, Utah, etc., if and when those laws are applicable to our business.
+            State Laws (including Tennessee): We strive to meet the obligations of emerging state privacy laws. In particular, as a company based in Tennessee, we are aware of and aim to comply with the Tennessee Information Protection Act (TIPA) and any regulations promulgated under it. TIPA (effective July 1, 2025) provides Tennessee residents with specific rights regarding their personal information (such as rights to access, correct, delete, and opt out of certain processing of personal data). We are taking steps to align our practices with TIPA&apos;s requirements to the extent they apply to our operations. Additionally, we intend to comply with other state privacy laws that may apply to us, such as the California Consumer Privacy Act (CCPA)/California Privacy Rights Act (CPRA), Virginia&apos;s Consumer Data Protection Act, and similar laws in Colorado, Utah, etc., if and when those laws are applicable to our business.
           </li>
           <li>
             Scope of Compliance: Many of these state privacy laws have thresholds or scope limitations (for example, they might apply only to businesses above a certain size or handling personal data of a certain number of residents). While our current business may not meet all thresholds for mandatory compliance, we voluntarily commit to respecting your privacy and will honor legitimate requests in the spirit of these laws. We continuously monitor legal developments in privacy and will update our practices as needed to maintain compliance.
@@ -193,7 +193,7 @@ export default function PrivacyPolicy() {
         <h3 className="text-base font-bold md:text-lg">
           9. Changes to This Privacy Policy
         </h3>
-        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors. When we make changes, we will revise the "Effective Date" at the top of this policy. For significant changes, we may also provide a more prominent notice (such as a banner on our website or an email notification, if appropriate).</p>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors. When we make changes, we will revise the &quot;Effective Date&quot; at the top of this policy. For significant changes, we may also provide a more prominent notice (such as a banner on our website or an email notification, if appropriate).</p>
         <p>We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information. Your continued use of our website or services after any changes to this policy constitutes your acceptance of the revised Privacy Policy.</p>
       </article>
 

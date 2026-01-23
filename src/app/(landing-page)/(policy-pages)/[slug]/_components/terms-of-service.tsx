@@ -8,7 +8,7 @@ export default function TermsOfService() {
           1. Acceptance of Terms
         </h3>
         <p>
-          By accessing or using the RepProtector website (the "Site") or purchasing any services from RepProtector ("we," "us," or "our"), you agree to comply with and be bound by these Terms of Service (the "Terms"). These Terms constitute a legally binding agreement between you and RepProtector. If you do not agree with any part of these Terms, you must not use the Site or our services.
+          By accessing or using the RepProtector website (the &quot;Site&quot;) or purchasing any services from RepProtector (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), you agree to comply with and be bound by these Terms of Service (the &quot;Terms&quot;). These Terms constitute a legally binding agreement between you and RepProtector. If you do not agree with any part of these Terms, you must not use the Site or our services.
         </p>
       </article>
 
@@ -26,7 +26,7 @@ export default function TermsOfService() {
           3. Description of Services
         </h3>
         <p>
-          RepProtector offers online reputation management services designed to help protect and improve your or your business's online reputation (the "Services"). Our Services include, for example, assisting in addressing negative or invalid online reviews by identifying, reviewing, and challenging feedback that violates platform guidelines. We may also provide services such as responding to customer feedback and other related reputation improvement strategies, as described on our Site. No user account is required to purchase our Services – you can order services directly through the Site. Please refer to our Site for specific descriptions and pricing of each Service offering. We reserve the right to modify or update the scope and description of our Services from time to time to reflect changes in offerings, features, or legal requirements. Any such modifications will not affect services already purchased, except as agreed or required by law.
+          RepProtector offers online reputation management services designed to help protect and improve your or your business&apos;s online reputation (the &quot;Services&quot;). Our Services include, for example, assisting in addressing negative or invalid online reviews by identifying, reviewing, and challenging feedback that violates platform guidelines. We may also provide services such as responding to customer feedback and other related reputation improvement strategies, as described on our Site. No user account is required to purchase our Services – you can order services directly through the Site. Please refer to our Site for specific descriptions and pricing of each Service offering. We reserve the right to modify or update the scope and description of our Services from time to time to reflect changes in offerings, features, or legal requirements. Any such modifications will not affect services already purchased, except as agreed or required by law.
         </p>
       </article>
 
@@ -65,7 +65,7 @@ export default function TermsOfService() {
           6. Disclaimer of Warranties
         </h3>
         <p>
-          RepProtector provides the Site and Services on an "as is" and "as available" basis, without any warranties of any kind, either express or implied. To the fullest extent permitted by law, we expressly disclaim all warranties, express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. We do not guarantee that the Site or Services will meet your requirements, achieve any specific results, or be uninterrupted, error-free, secure, or free of viruses or other harmful components. Any information or advice obtained from us or through the Site does not create any warranty not expressly stated in these Terms. You assume all risk for any use of the Site and Services. If you are dissatisfied with the Site or our Services, your sole remedy is to discontinue use of the Site and Services.
+          RepProtector provides the Site and Services on an &quot;as is&quot; and &quot;as available&quot; basis, without any warranties of any kind, either express or implied. To the fullest extent permitted by law, we expressly disclaim all warranties, express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. We do not guarantee that the Site or Services will meet your requirements, achieve any specific results, or be uninterrupted, error-free, secure, or free of viruses or other harmful components. Any information or advice obtained from us or through the Site does not create any warranty not expressly stated in these Terms. You assume all risk for any use of the Site and Services. If you are dissatisfied with the Site or our Services, your sole remedy is to discontinue use of the Site and Services.
         </p>
       </article>
 
@@ -98,7 +98,7 @@ export default function TermsOfService() {
           9. Indemnification
         </h3>
         <p>
-          You agree to indemnify, defend, and hold harmless RepProtector and its affiliates, owners, officers, employees, and agents from and against any and all claims, demands, lawsuits, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to: (a) your use or misuse of the Site or Services; (b) any information or content you provide to us in the course of using our Services; (c) your breach of these Terms; or (d) your violation of any law or the rights of any third party. This means that if a third party (for example, a review platform, a customer, or any other person) brings a claim against us due to your actions, omissions, or content (including, but not limited to, claims that content you asked us to challenge or remove was lawful or did not violate anyone's rights), you will be responsible for all costs and damages we incur (including legal fees and expenses) in connection with such claim. We reserve the right to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, and you agree to cooperate with our defense of such claim. Your indemnification obligations will survive any termination or expiration of this Agreement.
+          You agree to indemnify, defend, and hold harmless RepProtector and its affiliates, owners, officers, employees, and agents from and against any and all claims, demands, lawsuits, damages, losses, liabilities, and expenses (including reasonable attorneys&apos; fees) arising out of or related to: (a) your use or misuse of the Site or Services; (b) any information or content you provide to us in the course of using our Services; (c) your breach of these Terms; or (d) your violation of any law or the rights of any third party. This means that if a third party (for example, a review platform, a customer, or any other person) brings a claim against us due to your actions, omissions, or content (including, but not limited to, claims that content you asked us to challenge or remove was lawful or did not violate anyone&apos;s rights), you will be responsible for all costs and damages we incur (including legal fees and expenses) in connection with such claim. We reserve the right to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, and you agree to cooperate with our defense of such claim. Your indemnification obligations will survive any termination or expiration of this Agreement.
         </p>
       </article>
 
@@ -116,7 +116,7 @@ export default function TermsOfService() {
           11. Changes to Terms
         </h3>
         <p>
-          We reserve the right to modify or update these Terms at any time. If we make material changes, we will post the updated Terms on this page and update the "Effective Date" at the top, and we may provide additional notice (such as a statement on our homepage or via email if appropriate). Changes to the Terms will become effective immediately upon posting unless otherwise indicated. By continuing to use the Site or our Services after any changes take effect, you agree to the revised Terms. It is your responsibility to review these Terms periodically for updates. If you do not agree to a change in the Terms, you should stop using the Site and Services.
+          We reserve the right to modify or update these Terms at any time. If we make material changes, we will post the updated Terms on this page and update the &quot;Effective Date&quot; at the top, and we may provide additional notice (such as a statement on our homepage or via email if appropriate). Changes to the Terms will become effective immediately upon posting unless otherwise indicated. By continuing to use the Site or our Services after any changes take effect, you agree to the revised Terms. It is your responsibility to review these Terms periodically for updates. If you do not agree to a change in the Terms, you should stop using the Site and Services.
         </p>
       </article>
 
@@ -151,7 +151,7 @@ export default function TermsOfService() {
           If you have any questions, concerns, or comments about these Terms or our Services, please feel free to contact us. You can reach us by email at support@repprotector.com.
         </p>
         <p>
-          RepProtector is a Tennessee, USA-based service, and our business mailing address is available upon request (or as listed on our website, if applicable). For any notices or correspondence regarding these Terms, please write to us at our contact email above, with the subject line "Terms of Service Inquiry." We will do our best to respond to your inquiry in a timely manner.
+          RepProtector is a Tennessee, USA-based service, and our business mailing address is available upon request (or as listed on our website, if applicable). For any notices or correspondence regarding these Terms, please write to us at our contact email above, with the subject line &quot;Terms of Service Inquiry.&quot; We will do our best to respond to your inquiry in a timely manner.
         </p>
         <p className="pt-[3rem]">
           Thank you for reading our Terms of Service. By using RepProtector, you affirm that you understand and agree to these Terms. We value your trust and are committed to providing services that help protect and enhance your online reputation.

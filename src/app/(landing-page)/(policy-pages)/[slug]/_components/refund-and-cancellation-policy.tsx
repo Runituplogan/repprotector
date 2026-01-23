@@ -11,7 +11,7 @@ export default function RefundPolicy() {
                     1. All Sales Final
                 </h3>
                 <p>
-                    All purchases of RepProtector's services are final and not subject to routine refund or cancellation. In other words, once you have paid for a service, we consider the sale complete and non-refundable. Due to the nature of digital reputation management work, once our team begins working on your project or delivers results, the service cannot be undone. No refunds will be issued for services after work has commenced or been delivered. We make this "all sales are final" policy clear at the time of purchase so that you understand upfront that refunds are not guaranteed under normal circumstances.
+                    All purchases of RepProtector&apos;s services are final and not subject to routine refund or cancellation. In other words, once you have paid for a service, we consider the sale complete and non-refundable. Due to the nature of digital reputation management work, once our team begins working on your project or delivers results, the service cannot be undone. No refunds will be issued for services after work has commenced or been delivered. We make this &quot;all sales are final&quot; policy clear at the time of purchase so that you understand upfront that refunds are not guaranteed under normal circumstances.
                 </p>
             </article>
 
@@ -55,13 +55,13 @@ export default function RefundPolicy() {
                 <p>If you believe you have valid grounds for a refund or wish to cancel a service, you must submit a formal request to us for review. To ensure we have all the information needed to evaluate your case, please follow these steps:</p>
                 <ul className="text-gray-700 list-inside list-disc [&>li]:pl-6 [&>li]:-indent-6">
                     <li>
-                        Contact Us in Writing: Send an email to support@repprotectors.com with the subject line "Refund/Cancellation Request – [Your Name/Project]". In the body of the email, clearly state that you are requesting a refund or cancellation and include a brief explanation of the circumstances.
+                        Contact Us in Writing: Send an email to support@repprotectors.com with the subject line &quot;Refund/Cancellation Request – [Your Name/Project]&quot;. In the body of the email, clearly state that you are requesting a refund or cancellation and include a brief explanation of the circumstances.
                     </li>
                     <li>
                         Include Essential Details: Provide your full name (or the name of the account/organization that purchased the service), your contact information, and any relevant purchase details. Helpful details to include are: the invoice number or order ID, date of purchase, and a description of the service purchased. Also, tell us the reason you are requesting a refund or cancellation, with any supporting facts or documentation if available. The more information you provide, the more quickly and fairly we can review your request.
                     </li>
                     <li>
-                        Submit Within a Reasonable Time: It's best to submit your refund/cancellation request as soon as possible after the issue arises. Requests that come in long after the purchase or after significant work has been completed will be less likely to qualify for consideration.
+                        Submit Within a Reasonable Time: It&apos;s best to submit your refund/cancellation request as soon as possible after the issue arises. Requests that come in long after the purchase or after significant work has been completed will be less likely to qualify for consideration.
                     </li>
                 </ul>
                 <p>

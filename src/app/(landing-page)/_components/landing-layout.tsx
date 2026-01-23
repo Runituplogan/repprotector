@@ -28,9 +28,9 @@ export default function LandingLayout() {
     <section className="no-scrollbar">
       <NavBar />
       <Hero />
-      <Platforms />
-      <HowItWorks />
       <Services />
+      <HowItWorks />
+      <Platforms />
       <MoreReviews />
       <ReviewProcess />
       <HowWeRespond />

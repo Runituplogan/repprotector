@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { policies } from "../app/(landing-page)/(policy-pages)/_data";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -172,3 +173,18 @@ export const handleHashScroll = (
 
   return () => clearTimeout(timeoutId);
 };
+
+
+export function formatTab(tab: string) {
+  return tab.replaceAll("-", " ");
+}
+
+export async function generateStaticParams() {
+  return policies.map((policy) => {
+    const slug = policy.url.includes("/")
+      ? policy.url.split("/").pop()
+      : policy.url;
+
+    return { slug };
+  });
+}

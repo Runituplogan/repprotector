@@ -12,6 +12,7 @@ import Disclaimer from "./_components/disclaimer";
 import RefundPolicy from "./_components/refund-and-cancellation-policy";
 import ServiceLevelAgreement from "./_components/service-level-agreement";
 import Footer from "../../_components/footer";
+import { formatTab } from "@/src/utils";
 
 const policyLayouts: Record<string, ComponentType<{ policy: Policy }>> = {
   "privacy-policy": PrivacyPolicy,
@@ -21,10 +22,6 @@ const policyLayouts: Record<string, ComponentType<{ policy: Policy }>> = {
   "refund-and-cancellation-policy": RefundPolicy,
   "service-level-agreement-policy": ServiceLevelAgreement,
 };
-
-export function formatTab(tab: string) {
-  return tab.replaceAll("-", " ");
-}
 
 export async function generateMetadata({
   params,
@@ -48,15 +45,6 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  return policies.map((policy) => {
-    const slug = policy.url.includes("/")
-      ? policy.url.split("/").pop()
-      : policy.url;
-
-    return { slug };
-  });
-}
 
 export default async function PolicyPage({
   params,

@@ -60,7 +60,7 @@ export default function Hero() {
   }
       `}</style>
 
-      <Wrapper className="h-screen flex flex-col items-center justify-center gap-y-[1.4rem] lg:justify-between lg:flex-row">
+      <Wrapper className="h-[80vh] md:h-screen mt-[10rem] md:mt-0 flex flex-col items-center justify-center gap-y-[1.4rem] lg:justify-between lg:flex-row">
         <div className="max-w-[67rem] flex flex-col items-center lg:items-start gap-y-[1.2rem]">
           <p className="bg-primary-light p-[1rem] text-base rounded-full text-primary">
             Join over 400+ business today

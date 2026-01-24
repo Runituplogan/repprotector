@@ -60,7 +60,7 @@ const platforms = [
 export default function Platforms() {
     const router = useRouter()
     return (
-        <section className="bg-light-background pt-[7.4rem] pb-[5.3rem]">
+        <section className="bg-light-background pt-[3rem] md:pt-[7.4rem] pb-[5.3rem]">
             <Wrapper className="space-y-[4rem] md:space-y-[7rem]">
                 <header className="flex flex-col items-center justify-center text-center md:text-start md:justify-start ">
                     <h1 className="font-bold text-[3.2rem] md:text-[5rem] font-playfair text-black">Platforms We Manage Your Profiles On</h1>

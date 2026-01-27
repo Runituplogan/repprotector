@@ -52,7 +52,7 @@ export default function Services() {
           </p>
         </header>
         <main className="flex flex-col items-center gap-y-[5.9rem]">
-          <div className="flex flex-col items-start justify-center gap-x-[2rem] md:flex-row">
+          <div className="flex flex-col items-start justify-center gap-[2rem] md:flex-row">
             {services.map((service, _index) => (
               <div
                 key={_index}

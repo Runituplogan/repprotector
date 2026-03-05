@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import MetaPixel from "../components/meta-pixel";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +51,7 @@ export function BaseProvider({ children }: { children: React.ReactNode }) {
           },
         }}
       />
+      <MetaPixel />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

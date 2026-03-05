@@ -335,6 +335,19 @@ export default function PurchaseLayout({
       const selectedOptionData = formData.data[activeOption];
       const quantity = selectedOptionData.quantity ?? 0;
 
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("track", "Lead", {
+          content_name: activeService.title,
+          content_category: activeOption,
+          value: selectedOptionData.pricing || 0,
+          currency: "USD",
+        });
+      }
+
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const fbclid = urlParams.get("fbclid")
+
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -354,6 +367,7 @@ export default function PurchaseLayout({
           duration: selectedOptionData.duration,
 
           formData: selectedOptionData,
+          fbclid,
         }),
       });
 

@@ -35,7 +35,7 @@ export const SERVICE_OPTIONS = [
         key: "auto_review_outreach",
         title: "Get More Reviews",
         fields: ["fullName", "email", "phoneNumber", "platformUrl", "quantity", "additionalInfo", "pricing",] as const,
-        price: 50,
+        price: 25,
     },
     {
         key: "address_reviews",

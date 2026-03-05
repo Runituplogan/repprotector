@@ -1,7 +1,7 @@
 "use client"
 import Wrapper from "@/src/components/wrapper";
 import { ArrowRight } from 'lucide-react'
-import { GlassDoorIcon, GoogleIcon, GoogleXs, HomeAdvisorIcon, OpenDoor, TripAdvisorIcon, TrustPilotIcon, YelpIcon } from "@/src/icons";
+import { GartnerPeerInsight, GoogleIcon, ProductHuntIcon, RedditIcon, TripAdvisorIcon, YelpIcon } from "@/src/icons";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "@/src/utils/routes";
 const platforms = [
@@ -13,32 +13,18 @@ const platforms = [
         slug: "google-my-business",
     },
     {
-        icon: <TrustPilotIcon />,
-        title: "Trustpilot",
-        slug: "trustpilot",
-        description: "Show proof and trust on a platform buyers rely on.",
-        color: "text-green-100",
-    },
-    {
-        icon: <GlassDoorIcon />,
-        title: "GlassDoor",
-        description: "Shape how employees and candidates perceive your company.",
-        color: "text-green-100",
-        slug: "glassdoor",
-    },
-    {
-        icon: <OpenDoor />,
-        title: "Better Business Bureau",
-        description: "Show your trustworthiness through clear ratings and customer reviews.",
-        color: "text-blue-100",
-        slug: "better-business-bureau",
-    },
-    {
         icon: <YelpIcon />,
         title: "Yelp",
         description: "Strengthen your reputation on the platform locals rely on.",
         color: "text-pink-100",
         slug: "yelp",
+    },
+    {
+        icon: <RedditIcon />,
+        title: "Reddit",
+        slug: "reddit",
+        description: "Build trust where real conversations happen.",
+        color: "text-red-50",
     },
     {
         icon: <TripAdvisorIcon />,
@@ -48,12 +34,19 @@ const platforms = [
         slug: "tripadvisor",
     },
     {
-        icon: <HomeAdvisorIcon />,
-        title: "HomeAdvisor",
-        description: "Be the professional homeowners choose with confidence",
-        color: "text-orange-800",
-        slug: "homeadvisor",
+        icon: <ProductHuntIcon />,
+        title: "Product Hunt",
+        description: "Launch stronger and stay visible among early adopters.",
+        color: "text-orange-100",
+        slug: "product-hunt",
     },
+    {
+        icon: <GartnerPeerInsight />,
+        title: "Gartner Peer Insight",
+        description: "Build credibility with verified enterprise buyers.",
+        color: "text-blue-200",
+        slug: "gartner-peer-insight",
+    }
 ];
 
 
@@ -64,11 +57,11 @@ export default function Platforms() {
             <Wrapper className="space-y-[4rem] md:space-y-[7rem]">
                 <header className="flex flex-col items-center justify-center text-center md:text-start md:justify-start ">
                     <h1 className="font-bold text-[3.2rem] md:text-[5rem] font-playfair text-black">Platforms We Manage Your Profiles On</h1>
-                    <p className="text-grey-600">Be visible, credible and trusted across today’s leading review platforms</p>
+                    <p className="text-grey-600">Be visible and trusted across today’s leading review platforms.</p>
                 </header>
                 <section className="flex flex-wrap items-center justify-center gap-x-[1rem] gap-y-[2rem]">
                     {platforms.map((platform, index) => (
-                        <div key={index} className="md:max-w-[28.3rem] h-[28rem] overflow-hidden w-full flex flex-col items-center gap-y-[.5rem] bg-white rounded-[.847rem] border-[.1rem] border-[#E8E8E8] px-[1rem] py-[1.8rem]">
+                        <div key={index} className="md:max-w-[28.3rem] h-[28rem] overflow-hidden w-full flex flex-col items-center gap-y-[.5rem] bg-white rounded-[.847rem] border-[.07rem] border-[#E8E8E8] px-[1rem] py-[1.8rem]">
                             <h3 className="text-base text-black font-semibold">{platform.title}</h3>
                             <p className="text-sm text-black text-center h-[3.4rem]">{platform.description}</p>
                             <button

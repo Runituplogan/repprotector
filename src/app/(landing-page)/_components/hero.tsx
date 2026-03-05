@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import InfiniteScrollColumn from "./infinite-scroll-column";
 import InfiniteScrollRow from "./infinite-scroll-row";
 import { ROUTES } from "@/src/utils/routes";
+import { NoFolderIcon } from "@/src/icons";
 
 export default function Hero() {
   const router = useRouter()
@@ -77,10 +78,11 @@ export default function Hero() {
 
           <Button
             onClick={() => router.push(ROUTES.calendly)}
-            className="mt-[2.2rem] w-full lg:w-auto"
+            className="mt-[2.2rem] w-full text-sm lg:text-[1.6rem] lg:w-auto"
           >
-            Book A Call
+            Book a Call For a Free $25 Dollar Voucher
           </Button>
+          <span className="flex items-center gap-x-[.8rem]"> <NoFolderIcon /> <p className="text-[#939393]">No purchase required</p></span>
         </div>
         <div className="relative lg:h-[600px] lg:w-[100vw] lg:max-w-none lg:overflow-hidden lg:-mr-[15vw] lg:ml-auto">
 

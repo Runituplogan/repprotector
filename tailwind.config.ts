@@ -31,9 +31,12 @@ export default {
       "grey-400": "#666666",
       "grey-600": "#333333",
       "blue-100": "#379DFF",
+      "blue-200": "#002FB7",
       "green-100": "#26970C",
       "red-100": "#DB221F",
+      "red-50": "#FB2711",
       "pink-100": "#C988A8",
+      "orange-100": "#FF6154",
       "orange-800": "#C7752A",
     },
     fontSize: {

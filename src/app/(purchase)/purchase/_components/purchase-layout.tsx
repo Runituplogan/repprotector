@@ -3,18 +3,16 @@
 import Wrapper from "@/src/components/wrapper";
 import Header from "./header";
 import {
-  GlassdoorSmIcon,
-  GlassDoorXs,
+  GartnerPeerInsightSm,
+  GatnerPeerInsightsXs,
   GoogleSmIcon,
   GoogleXs,
-  HomeAdvisorSmIcon,
-  HomeAdvisorXs,
-  OpenTable,
-  PlayStoreXs,
+  ProductHunt,
+  ProductHuntSm,
+  RedditSmIcon,
+  RedditXs,
   TripAdvisorSmIcon,
   TripAdvisorXs,
-  TrustPilotSmIcon,
-  TrustPilotXs,
   YelpSmIcon,
   YelpXs,
 } from "@/src/icons";
@@ -49,32 +47,18 @@ const services: Service[] = [
     title: "Google My Business",
   },
   {
-    id: 2,
-    slug: "trustpilot",
-    icon: TrustPilotSmIcon,
-    smIcon: TrustPilotXs,
-    title: "Trustpilot",
-  },
-  {
-    id: 3,
-    slug: "glassdoor",
-    icon: GlassdoorSmIcon,
-    smIcon: GlassDoorXs,
-    title: "GlassDoor",
-  },
-  {
-    id: 4,
-    slug: "better-business-bureau",
-    icon: OpenTable,
-    smIcon: PlayStoreXs,
-    title: "Better Business Bureau",
-  },
-  {
     id: 5,
     slug: "yelp",
     icon: YelpSmIcon,
     smIcon: YelpXs,
     title: "Yelp",
+  },
+  {
+    id: 3,
+    slug: "reddit",
+    icon: RedditSmIcon,
+    smIcon: RedditXs,
+    title: "Reddit",
   },
   {
     id: 6,
@@ -84,11 +68,18 @@ const services: Service[] = [
     title: "TripAdvisor",
   },
   {
+    id: 4,
+    slug: "product-hunt",
+    icon: ProductHuntSm,
+    smIcon: ProductHunt,
+    title: "Product Hunt",
+  },
+  {
     id: 7,
-    slug: "homeadvisor",
-    icon: HomeAdvisorSmIcon,
-    smIcon: HomeAdvisorXs,
-    title: "HomeAdvisor",
+    slug: "gartner-peer-insight",
+    icon: GartnerPeerInsightSm,
+    smIcon: GatnerPeerInsightsXs,
+    title: "Gartner Peer Insight",
   },
 ];
 
@@ -255,7 +246,7 @@ export default function PurchaseLayout({
           }
         }
 
-       
+
         updatePricingForOption(optionKey, newQuantity);
       };
 
